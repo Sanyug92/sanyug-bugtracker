@@ -1,0 +1,45 @@
+﻿@model sanyug_bugtracker.Models.ProjectManagerViewModel
+
+@{
+    ViewBag.Title = "UnassignProjects";
+}
+
+
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayFor(modeluser => Model.Name)
+        </th>
+    </tr>
+
+    @using (Html.BeginForm("UnassignProject", "Projects", new { projectId = Model.Pid }, FormMethod.Post))
+    {
+
+        <tr>
+            @*<th>
+                    @Html.DisplayFor(model => user.user.Roles)
+                </th>
+                <th></th>*@
+            <td>
+                @Html.ListBox("SelectedProjectManager", Model.ProjectManager, htmlAttributes: new { @class = "form-control" })
+                @Html.HiddenFor(model => model.Id)
+            </td>
+        </tr>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit">Sumbit</button>
+            </div>
+        </div>
+
+    }
+
+
+</table>
+
+
+<h2>UnassignProjects</h2>
+

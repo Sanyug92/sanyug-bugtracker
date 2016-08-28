@@ -1,0 +1,137 @@
+﻿@model IEnumerable<sanyug_bugtracker.Models.Tickets>
+
+@{
+    ViewBag.Title = "DevProjects";
+}
+
+<h2>Index</h2>
+
+<p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+
+</p>
+
+@*@using (Html.BeginForm())
+    {
+        <p>
+            Find by name: @Html.TextBox("SearchString")
+            <input type="submit" value="Search" />
+        </p>
+    }*@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignedTo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketPriority)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Created)
+                </th>*
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Updated)
+                </th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssignedTo.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OwnerUser.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketPriority.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketStatus.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketType.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Updated)
+                    </td>*@
+                <td>
+                    @*@if (User.IsInRole("Submitter") || User.IsInRole("Developer") || User.IsInRole("Admin") || User.IsInRole("ProjectManager"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                        <br />
+                    }*@
+                    @if (User.IsInRole("Admin") || User.IsInRole("ProjectManager"))
+                    {
+
+                        @Html.ActionLink("Assign Ticket", "AssignTicket", new { id = item.Id, pId = item.ProjectId })
+                    }
+                </td>
+                @*Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts {
+
+    <script>
+    $(document).ready(function () {
+        $('.table').DataTable();
+    });
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+    });
+    </script>
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

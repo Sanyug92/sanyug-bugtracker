@@ -1,0 +1,40 @@
+﻿@model sanyug_bugtracker.Models.UserViewModel
+
+@{
+    ViewBag.Title = "Change Roles";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayFor(modeluser => Model.FirstName)
+        </th>
+    </tr>
+
+@using (Html.BeginForm("ChangeRole", "Admin", FormMethod.Post))
+{ 
+
+            <tr>
+                @*<th>
+                        @Html.DisplayFor(model => user.user.Roles)
+                    </th>
+                    <th></th>*@
+                <td>
+                    @Html.ListBox("SelectedRoles", Model.Roles, htmlAttributes: new { @class = "form-control" })
+                    @Html.HiddenFor(model => model.Id)                  
+                </td>              
+            </tr>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" >Sumbit</button>
+                </div>
+            </div>
+
+}
+
+
+</table>
+

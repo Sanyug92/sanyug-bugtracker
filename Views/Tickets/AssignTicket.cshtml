@@ -1,0 +1,43 @@
+﻿@model sanyug_bugtracker.Models.ProjectManagerViewModel
+
+@{
+    ViewBag.Title = "Assign Tickets";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            First Name
+        </th>
+    </tr>
+
+@using (Html.BeginForm("AssignTicket", "Tickets", new { tId = Model.Tid, pId = Model.Pid },  FormMethod.Post))
+{
+
+            <tr>
+                @*<th>
+                        @Html.DisplayFor(model => user.user.Roles)
+                    </th>
+                    <th></th>*@
+                <td>
+                    @Html.DisplayFor(model => Model.ProjectN)
+                </td>
+                <td>
+                    @Html.ListBox("SelectedDevelopers", Model.Developers, htmlAttributes: new { @class = "form-control" })
+                    @Html.HiddenFor(model => model.user.Id)                  
+                </td>              
+            </tr>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" >Sumbit</button>
+                </div>
+            </div>
+
+}
+
+
+</table>
+

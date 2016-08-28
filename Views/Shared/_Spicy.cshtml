@@ -1,0 +1,258 @@
+﻿
+@{
+    ViewBag.Title = "_Spicy";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Taurus</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="icon" type="image/ico" href="favicon.ico" />
+
+    @*<link href="~/BugTemp/css/stylesheets.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/BugTemp/css/stylesheet.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/BugTemp/css/themes.css" rel="stylesheet" type="text/css" />*@
+
+   @*<link href="~/BugTemp/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/css/style.css" rel="stylesheet" type="text/css">
+    <link href="~/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="~/css/animate.css" rel="stylesheet" type="text/css">
+    @Styles.Render("~/BugTemp/css/stylesheets.css")
+    @Styles.Render("~/BugTemp/css/stylesheet.css")
+    @Styles.Render("~/BugTemp/css/themes.css")
+    @*@Styles.Render("~/BugTemp/css/bootstrap/bootstrap.min.css")
+    @Styles.Render("~/Content/bootstrap-theme.css"*@)
+
+
+
+    @*<link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />*@
+ 
+    
+  
+   
+
+    @*<script type='text/javascript' src='~/BugTemp/js/plugins/jquery/jquery.min.js'></script>
+     <script type='text/javascript' src='~/BugTemp/js/plugins/jquery/jquery-ui.min.js'></script>
+     <script type='text/javascript' src='~/BugTemp/js/plugins/jquery/jquery-migrate.min.js'></script>
+     <script type='text/javascript' src='~/BugTemp/js/plugins/jquery/globalize.js'></script>
+     <script type='text/javascript' src='~/BugTemp/js/plugins/bootstrap/bootstrap.min.js'></script>
+
+
+     <script type='text/javascript' src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+     <script type='text/javascript' src='~/BugTemp/js/plugins/tinymce/tinymce.min.js'></script>
+    <script type='text/javascript' src="~/BugTemp/js/plugins/codemirror/mode/css/css.js"></script>
+
+     <script type='text/javascript' src='~/BugTemp/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'></script>
+      <script type='text/javascript' src='~/BugTemp/js/plugins/uniform/jquery.uniform.min.js'></script>
+
+     <script type='text/javascript' src='~/BugTemp/js/plugins/noty/jquery.noty.js'></script>
+      <script type='text/javascript' src='~/BugTemp/js/plugins/noty/layouts/topCenter.js'></script>
+      <script type='text/javascript' src='~/BugTemp/js/plugins/noty/layouts/topLeft.js'></script>
+      <script type='text/javascript' src='~/BugTemp/js/plugins/noty/layouts/topRight.js'></script>
+      <script type='text/javascript' src='~/BugTemp/js/plugins/noty/themes/default.js'></script>
+
+      <script type='text/javascript' src='/BugTemp/js/plugins/knob/jquery.knob.js'></script>
+
+      <script type='text/javascript' src='~/BugTemp/js/plugins/shbrush/XRegExp.js'></script>
+      <script type='text/javascript' src='~/BugTemp/js/plugins/shbrush/shCore.js'></script>
+      <script type='text/javascript' src='~/BugTemp/js/plugins/shbrush/shBrushXml.js'></script>
+      <script type='text/javascript' src='~/BugTemp/js/plugins/shbrush/shBrushJScript.js'></script>
+      <script type='text/javascript' src='~/BugTemp/js/plugins/shbrush/shBrushCss.js'></script>
+
+      <script type='text/javascript' src='~/BugTemp/js/plugins/bootstrap/bootstrap-file-input.js'></script>
+
+      <script type='text/javascript' src='~/BugTemp/js/plugins/knob/jquery.knob.js'></script>
+      <script type='text/javascript' src='~/BugTemp/js/plugins/sparkline/jquery.sparkline.min.js'></script>
+      <script type='text/javascript' src='~/BugTemp/js/plugins/flot/jquery.flot.js'></script>
+      <script type='text/javascript' src='~/BugTemp/js/plugins/flot/jquery.flot.resize.js'></script>*@
+                                       
+   
+
+</head>
+<body class="bg-img-num1" data-settings="open">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @if (User.Identity.IsAuthenticated) {
+                <nav class="navbar brb" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-reorder"></span>
+                        </button>
+                        <a class="navbar-brand" href="~/BugTemp/index.html"><img src="~/BugTemp/img/logo.png" /></a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href="@Url.Action("Index","Home")">
+                                    <span class="icon-home"></span>Dashboard
+
+                                </a>
+                            </li>
+                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-ticket"></span>Tickets</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("Index","Tickets")">All Tickets</a></li>
+                                    <li><a href="@Url.Action("myUnassignedT","Tickets")">Unassigned Tickets</a></li>
+                                    <li><a href="@Url.Action("myIndex","Tickets")">My Tickets</a></li>
+                                    <li><a href="@Url.Action("DevProjects","Tickets")">Tickets of My Projects</a></li>
+                                </ul>
+                            </li>                           
+                            <li>
+                                <a href="@Url.Action("myProjects","Projects")" @*class="dropdown-toggle" data-toggle="dropdown"*@><span class="icon-cogs"></span>My Projects</a>
+                            </li>
+                            <li>
+                               
+                            </li>    
+                            @*<li><a href="widgets.html"><span class="icon-globe"></span></a></li>*@
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-user"></span>Profile</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("Login","Account")">Login</a></li>
+                                    <li><a href="@Url.Action("Register", "Account")">Registration</a></li>
+                                    <li><a href="@Url.Action("Index","Admin")">Admin</a></li> 
+                                    @*<li><button class="getuser" value="@Roles.AddUsersToRole(ViewBag.userid,ViewBag.roleAid)" id="Admin">Admin</button></li> 
+                                    <li><button class="getuser" value="@Roles.AddUsersToRole(ViewBag.userid, ViewBag.rolePMid)" id="PM">Project Manager</button></li> 
+                                    <li><button class="getuser" value="@Roles.AddUsersToRole(ViewBag.userid, ViewBag.roleid)" id="Deverloperx">Developer</button></li> 
+                                    <li><button class="getuser" value="@Roles.AddUsersToRole(ViewBag.userid, ViewBag.roleSid)" id="Sub">Submitter</button></li>*@ 
+                                    @*<li>                                  
+                                       @if (Request.IsAuthenticated)
+                                        {
+                                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-left" }))
+                                            {
+                                                @Html.AntiForgeryToken()
+                                                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                                            }
+                                        }
+                                    </li>*@
+                                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                                    <li><a href="~/BugTemp/sample_profile.html">User profile</a></li>                      
+                                    <li><a href="~/BugTemp/sample_edit_profile.html">Edit profile</a></li>                                 
+                                    <li><a href="~/BugTemp/sample_timeline.html">Timeline</a></li>                                 
+                                </ul>
+                            </li>
+                            <li><div class="icon-bell-alt" id="alert-placeholder" style="padding: 5px;"></div></li>
+                            
+                        </ul>
+                       
+                        <form class="navbar-form navbar-right" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="search..." />
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+                }
+
+                @if (!User.Identity.IsAuthenticated)
+                {
+
+                    <nav class="navbar brb" role="navigation">
+                        <button><a href="@Url.Action("Login","Account")">Login</a></button>
+                        <button><a href="@Url.Action("Register", "Account")">Registration</a></button>
+                    </nav>
+                }
+               
+</div>
+        </div>
+        @RenderBody()
+       
+        
+                    <div class="footer footer-defaut tac">
+                        <div class="pull-left" style="width: 200px;">
+                            @*<div class="input-group">
+                                <div class="input-group-addon"><span class="icon-calendar"></span></div>
+                                <input type="text" class="datepicker form-control" value="10/08/2013" />
+                                <div class="input-group-btn"><button class="btn"><span class="icon-search"></span></button></div>
+                            </div>*@
+                        </div>
+                        @*<div class="pull-right">
+                            <a href="#">More information</a>
+                        </div>*@
+                    </div>
+                </div>
+
+      
+
+
+    @section scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+
+            @*$.ajax({
+                type: 'POST',
+                data: { userid: "userid", RoleId: "Role" },
+                url: "@Url.Action(" ChangeRoleonClick", "Admin")",
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8', //type of data I'm sending
+                //    dataType: "test", // Type of data I'm expect back
+                //    success: function () {
+                //    $('.dev').html()
+                //      },
+                //error: function (xhr, ajaxOptions, thrownError) {
+                //    alert(xhr.responseText);
+            });*@
+
+            //a helper function to encode HTML values.
+            function htmlEncode(value) {
+                return $('<div />').text(value).html();
+            }
+
+            //execute on document ready
+            $(function () {
+
+                //function that the hub can call when it receives a notification.
+                $.connection.notificationHub.client.displayNotification = function (title, message, alertType) {
+
+                    //Create the bootstrap alert html
+                    var alertHtml = '<div class="alert alert-' + htmlEncode(alertType) + ' alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span>×</span></button><strong>' + htmlEncode(title) + '</strong> ' + htmlEncode(message) + '</div>';
+
+                    $(alertHtml)
+                      .hide()                           //hide the newly created element (this is required for fadeIn to work)
+                      .appendTo('#alert-placeholder')   //add it to the palceholder in the page
+                      .fadeIn(500);                     //little flair to grab user attention
+                };
+
+                window.notifyApp = {
+                    hubConnector: $.connection.hub.start()  //start the connection and store object returned globally for access in child views
+                };
+
+            });
+
+            });
+
+    </script>
+    }
+
+    @Scripts.Render("~/~/BugTemp/js/actions.js")
+    @Scripts.Render("~/BugTemp/js/plugins/jquery/jquery.min.js")
+    @Scripts.Render("~/BugTemp/js/plugins/bootstrap/bootstrap.min.js")   
+    @Scripts.Render("~/Scripts/jquery.signalR-2.2.1.min.js")
+    @Scripts.Render("~/SignalR/Hubs")
+    @Scripts.Render("~/BugTemp/js/plugins/datatables/jquery.dataTables.min.js")
+
+    @*@Scripts.Render("~/BugTemp/js/plugins/bootstrap/bootstrap-file-input.js")*@
+    @Scripts.Render("~/BugTemp/js/actions.js")
+    @Scripts.Render("~/BugTemp/js/plugins/tinymce/tinymce.min.js")
+    <script>tinymce.init({ selector:'textarea'});</script>
+    @RenderSection("scripts", required: false)
+
+    @*<script type='text/javascript' src='~/BugTemp/js/plugins.js'></script>
+    <script type='text/javascript' src='~/BugTemp/js/actions.js'></script>
+    <script type='text/javascript' src='~/BugTemp/js/charts.js'></script>
+    <script type='text/javascript' src='~/BugTemp/js/settings.js'></script>*@
+
+    
+</body>
+</html>
+

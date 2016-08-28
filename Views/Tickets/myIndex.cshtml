@@ -1,0 +1,190 @@
+﻿@*@model IEnumerable<sanyug_bugtracker.Models.Tickets>*@
+@model sanyug_bugtracker.Models.ParentModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<h2>Index</h2>*@
+
+@*<p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+    <br />
+    @if (User.IsInRole("ProjectManager") || User.IsInRole("Admin") || User.IsInRole("Developer"))
+    {
+        @Html.ActionLink("Unassigned Tickets ", "myUnassignedT", "Tickets")
+        <br />
+        @Html.ActionLink("All Tickets from my Projects", "DevProjects", "Tickets")
+    }
+</p>*@
+
+@*<div class="block">*@
+    <div class="header">
+        <h2>My Tickets</h2>
+    </div>
+    @*<div class="content">*@
+@if (User.Identity.IsAuthenticated)
+{
+<a href="@Url.Action("Create", "Tickets")">
+    <span class="icon-plus"></span>
+        &#160;
+    Add Ticket</a>
+    }
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="hidden"></th>
+                    <th class="hidden"></th>
+                    <th>
+                        Developer
+                        @*@Html.DisplayNameFor(model => model.AssignedTo)*@
+                    </th>
+                    <th>
+                        Submitter
+                        @*@Html.DisplayNameFor(model => model.OwnerUser)*@
+                    </th>
+                    <th>
+                        Project
+                        @*@Html.DisplayNameFor(model => model.Project)*@
+                    </th>
+                    <th>
+                        Priority
+                        @*@Html.DisplayNameFor(model => model.TicketPriority)*@
+                    </th>
+                    <th>
+                        Status
+                        @*@Html.DisplayNameFor(model => model.TicketStatus)*@
+                    </th>
+                    <th>
+                        Type
+                        @*@Html.DisplayNameFor(model => model.TicketType)*@
+                    </th>
+                    <th>
+                        Title
+                        @*@Html.DisplayNameFor(model => model.Title)*@
+                    </th>
+                    <th>
+                        Description
+                        @*@Html.DisplayNameFor(model => model.Description)*@
+                    </th>
+                    <th>
+
+                    </th>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.Created)
+                        </th>*
+                        @*<th>
+                                @Html.DisplayNameFor(model => model.Updated)
+                        </th>*@
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.tickets)
+                {
+                    <tr>
+                        
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AssignedTo.FirstName, new { @class = "dev" })
+                            @using sanyug_bugtracker.Models;
+                            @using (Html.BeginForm("AssignTicket", "Tickets", FormMethod.Post))
+                            {            //ViewBag.AssignedToId = new SelectList(db.Users, "Id", "FirstName", tickets.AssignedToId);
+                                @Html.AntiForgeryToken()
+                                @Html.DropDownList("Developer", new SelectList(Model.DevUser, "Id", "FirstName", item.AssignedToId), htmlAttributes: new { @class = "form-control dropdown" })
+                            }
+                            <td id="tId" class="hidden">@item.Id></td>
+                            <td id="pId" class="hidden">@item.ProjectId></td>
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OwnerUser.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Project.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TicketPriority.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TicketStatus.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TicketType.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        @*<td>
+                        </td>*@
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.Updated)
+                            </td>*@
+                        <td>
+                            @if (User.IsInRole("Submitter") || User.IsInRole("Developer") || User.IsInRole("Admin") || User.IsInRole("ProjectManager"))
+                            {
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                                <br />
+                                @Html.ActionLink("Details", "Details", new { id = item.Id })
+                                <br />
+                            }
+
+                            @if (User.IsInRole("Developer") || User.IsInRole("Admin") || User.IsInRole("ProjectManager"))
+                            {
+
+                                @Html.ActionLink("Assign Ticket", "AssignTicket", new { id = item.Id, pId = item.ProjectId })
+                            }
+                        </td>
+
+                        @* @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @*</div>
+    </div>*@
+
+        @section scripts {
+
+            <script>
+                $(document).ready(function () {
+                    $('.table').DataTable();
+                });
+                $(document).ready(function () {
+                    $('.dropdown-toggle').dropdown();
+                });
+                $(".dropdown").bind("change", function () {
+                   var $item = $('#Developer').closest('tr')
+                   var T =  $item.find("#tId").text()
+                   var P = $item.find("#pId").text()
+                   GetDev($(this).val(),T,P);
+                });
+                function GetDev(init, tId, pId) {
+                    //var data = {"uId": "init", "tId": "tId", "pId": "pId"}                    
+                    $.ajax({
+                        type: 'POST',
+                        //data: JSON.stringify(data), // Send value of the drop down change of option
+                        data: { userid: "init", tId: "tId", pId: "pId" },
+                        url: "@Url.Action("AssignTickets","Tickets")",                    
+                        contentType: 'application/x-www-form-urlencoded; charset=UTF-8', //type of data I'm sending
+                        dataType: "test", // Type of data I'm expect back
+                        success: function () {
+                            $('.dev').html()
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            alert(xhr.responseText);
+                        }
+
+                    })
+                };
+            </script>
+
+        }
+
+
+

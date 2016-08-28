@@ -1,0 +1,175 @@
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\ApplicationInsights.config
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\csc.exe
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\System.Collections.Immutable.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\System.Reflection.Metadata.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\vbc.exe
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\VBCSCompiler.exe
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\VBCSCompiler.exe.config
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\sanyug-bugtracker.dll.config
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\sanyug-bugtracker.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\sanyug-bugtracker.pdb
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Antlr3.Runtime.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\EntityFramework.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\EntityFramework.SqlServer.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.Agent.Intercept.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.DependencyCollector.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.Web.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.WindowsServer.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.ApplicationInsights.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.Identity.Core.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Cookies.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Facebook.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Google.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.OAuth.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Twitter.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Web.Infrastructure.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Newtonsoft.Json.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Owin.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Helpers.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Mvc.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Optimization.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Razor.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.WebPages.Deployment.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.WebPages.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.WebPages.Razor.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\WebGrease.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.DependencyCollector.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.Web.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.WindowsServer.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.ApplicationInsights.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Helpers.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Mvc.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Optimization.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Razor.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.WebPages.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.WebPages.Deployment.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.WebPages.Razor.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Antlr3.Runtime.pdb
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Newtonsoft.Json.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\EntityFramework.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\EntityFramework.SqlServer.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.Identity.Core.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Facebook.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Cookies.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.OAuth.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Google.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Twitter.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\obj\Debug\sanyug-bugtracker.csprojResolveAssemblyReference.cache
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\obj\Debug\sanyug-bugtracker.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\obj\Debug\sanyug-bugtracker.pdb
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.SignalR.Core.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.SignalR.Core.xml
+c:\Users\sanyulg\documents\visual studio 2015\Projects\RTest\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\ApplicationInsights.config
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\csc.exe
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\vbc.exe
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\VBCSCompiler.exe
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\sanyug-bugtracker.dll.config
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\sanyug-bugtracker.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\sanyug-bugtracker.pdb
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Antlr3.Runtime.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\EntityFramework.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\EntityFramework.SqlServer.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.Web.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.ApplicationInsights.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Newtonsoft.Json.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Owin.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Helpers.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Mvc.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Optimization.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Razor.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.WebPages.Deployment.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.WebPages.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.WebPages.Razor.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\WebGrease.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.Web.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.ApplicationInsights.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Helpers.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Mvc.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Optimization.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.Razor.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.WebPages.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.WebPages.Deployment.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\System.Web.WebPages.Razor.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Antlr3.Runtime.pdb
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Newtonsoft.Json.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\EntityFramework.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\EntityFramework.SqlServer.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\obj\Debug\sanyug-bugtracker.csprojResolveAssemblyReference.cache
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\obj\Debug\sanyug-bugtracker.dll
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\obj\Debug\sanyug-bugtracker.pdb
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\obj\Debug\sanyug_Bugtracker.Migrations.Initial.resources
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\obj\Debug\sanyug-bugtracker.csproj.GenerateResource.Cache
+C:\Users\sanyulg\Documents\CFProjects\sanyug-bugtracker\sanyug-bugtracker\obj\Debug\sanyug_Bugtracker.Migrations.InitialMigrations.resources

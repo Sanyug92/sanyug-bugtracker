@@ -1,0 +1,1976 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B129CC17-0427-4C89-95EC-B9B2DC41A0AE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sanyug_bugtracker</RootNamespace>
+    <AssemblyName>sanyug-bugtracker</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AuthorizeUserAttribute.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProjectHelper.cs" />
+    <Compile Include="Controllers\ProjectManagerController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\TicketAttachmentsController.cs" />
+    <Compile Include="Controllers\TicketCommentsController.cs" />
+    <Compile Include="Controllers\TicketHistoriesController.cs" />
+    <Compile Include="Controllers\TicketNotificationsController.cs" />
+    <Compile Include="Controllers\TicketsController.cs" />
+    <Compile Include="Controllers\UserRolesHelper.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Hubs\NotificationHub.cs" />
+    <Compile Include="Migrations\201608272107427_Initial.cs" />
+    <Compile Include="Migrations\201608272107427_Initial.Designer.cs">
+      <DependentUpon>201608272107427_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608272115245_InitialMigrations.cs" />
+    <Compile Include="Migrations\201608272115245_InitialMigrations.Designer.cs">
+      <DependentUpon>201608272115245_InitialMigrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminUserViewModel.cs" />
+    <Compile Include="Models\AssignTicketsViewModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ParentModel.cs" />
+    <Compile Include="Models\ProjectManagerViewModel.cs" />
+    <Compile Include="Models\Projects.cs" />
+    <Compile Include="Models\TicketAttachments.cs" />
+    <Compile Include="Models\TicketComments.cs" />
+    <Compile Include="Models\TicketHistories.cs" />
+    <Compile Include="Models\TicketNotifications.cs" />
+    <Compile Include="Models\TicketPriorities.cs" />
+    <Compile Include="Models\Tickets.cs" />
+    <Compile Include="Models\TicketStatuses.cs" />
+    <Compile Include="Models\TicketTypes.cs" />
+    <Compile Include="Models\ticketViewModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BugTemptrash\assets\ajax_modal_content.html" />
+    <Content Include="BugTemptrash\assets\elfinder\MySQLStorage.sql" />
+    <Content Include="BugTemptrash\assets\filetree\jqueryFileTree.asp" />
+    <Content Include="BugTemptrash\assets\filetree\jqueryFileTree.aspx" />
+    <Content Include="BugTemptrash\assets\settings.html" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL0FuaW1hbCA0OC5qcGc1371280868.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL0xvdHVzIFNwb3J0IEV4aWdlIEd0MyAwMS5qcGc1371280868.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL1Bob3Rvc2hvcF9NdWx0aS1jb2xvdXJlZF9idXR0ZXJmbGllc18wMjM3MzJfLmpwZw1371280314.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL1dvcmxkX290aGVyX3dvcmxkX0Nvc3RhX1JpY2FfX1B1bnRhcmVuYXNfMDIzNzQ2Xy5qcGc1371280316.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL1F1aWV0IEdldGF3YXksIExha2UgVGFob2UsIE5ldmFkYS01NjUzNjIuanBlZw1371280314.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL1Nwb3J0X0V4dHJlbWVfX1dhdmVzX19PY2Vhbl9fUmlza19fU3VyZmluZ18wMjM3MzFfLmpwZw1371280314.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL1NwYWNlX0xhdW5jaGluZ19wYWRfMDIzNzI0Xy5qcGc1371280314.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL1NyaXRuZXlfU3BlYXJzMl8xOTIweDEyMDAuanBn1371280315.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL3BldWdlb3RfOTA4cmMtMTYwMHgxMjAwLmpwZw1371280313.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL3doaXRlLWFzdG9uLW1hcnRpbi13YWxscGFwZXItMTkyMHgxMDgwLTEwMDgwNzguanBn1371280315.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL3doaXRlX2N1cnZlZF9idWlsZGluZy0xOTIweDEyMDAuanBn1371280315.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL3dpbmRvd3NfN19fX2RyYWdvbi0yNTYweDE2MDAuanBn1371280316.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL3dpZGUtd2FsbHBhcGVyLTE5MjB4MTA4MC0wMDEuanBn1371280315.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL3dpZGUtd2FsbHBhcGVyLTE5MjB4MTA4MC0wMDEyMzQuanBn1371280316.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL3U5NjQ0XzMxNTFfbG92ZV80LmpwZw1371280315.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_SW1hZ2VzL3UzMDEzXzEyNzhfNTM0MDUtMTYwMHgxMjAwLmpwZw1371280315.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_TUlNRS1UeXBlcy92bXdhcmUtd2luLWllOC1lbGZpbmRlci5wbmc1371279794.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_TUlNRS1UeXBlcy9maXNoZXMuanBn1371279793.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_TUlNRS1UeXBlcy9pTWFjLnBzZA1371279793.png" />
+    <Content Include="BugTemptrash\assets\uploads\.tmb\l1_TUlNRS1UeXBlcy9waHVrZXQudGlmZg1371279794.png" />
+    <Content Include="BugTemptrash\assets\uploads\Images\Animal 48.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\Lotus Sport Exige Gt3 01.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\peugeot_908rc-1600x1200.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\Photoshop_Multi-coloured_butterflies_023732_.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\Quiet Getaway, Lake Tahoe, Nevada-565362.jpeg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\Space_Launching_pad_023724_.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\Sport_Extreme__Waves__Ocean__Risk__Surfing_023731_.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\Sritney_Spears2_1920x1200.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\u3013_1278_53405-1600x1200.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\u9644_3151_love_4.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\white-aston-martin-wallpaper-1920x1080-1008078.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\white_curved_building-1920x1200.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\wide-wallpaper-1920x1080-001.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\wide-wallpaper-1920x1080-001234.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\windows_7___dragon-2560x1600.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\Images\World_other_world_Costa_Rica__Puntarenas_023746_.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\books.xml" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\elfinder.css" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\elfinder.full.js" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\fireworks.swf" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\fishes.jpg" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\google.html" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\phuket.tiff" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\rm.wav" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\test-pivot.sql" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\virus.exe" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\vmware-win-ie8-elfinder.png" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\YUICompressor.java" />
+    <Content Include="BugTemptrash\component_blocks.html" />
+    <Content Include="BugTemptrash\component_buttons.html" />
+    <Content Include="BugTemptrash\component_calendar.html" />
+    <Content Include="BugTemptrash\component_charts.html" />
+    <Content Include="BugTemptrash\component_gallery.html" />
+    <Content Include="BugTemptrash\component_icons.html" />
+    <Content Include="BugTemptrash\component_layout_blank.html" />
+    <Content Include="BugTemptrash\component_layout_custom.html" />
+    <Content Include="BugTemptrash\component_layout_fixed.html" />
+    <Content Include="BugTemptrash\component_layout_scroll.html" />
+    <Content Include="BugTemptrash\component_layout_white.html" />
+    <Content Include="BugTemptrash\component_lists.html" />
+    <Content Include="BugTemptrash\component_maps.html" />
+    <Content Include="BugTemptrash\component_messages.html" />
+    <Content Include="BugTemptrash\component_modals.html" />
+    <Content Include="BugTemptrash\component_portlet.html" />
+    <Content Include="BugTemptrash\component_progress.html" />
+    <Content Include="BugTemptrash\component_table_default.html" />
+    <Content Include="BugTemptrash\component_table_sortable.html" />
+    <Content Include="BugTemptrash\component_tabs.html" />
+    <Content Include="BugTemptrash\component_typography.html" />
+    <Content Include="BugTemptrash\css\backgrounds.css" />
+    <Content Include="BugTemptrash\css\bootstrap\bootstrap.min.css" />
+    <Content Include="BugTemptrash\css\cleditor\buttons.gif" />
+    <Content Include="BugTemptrash\css\cleditor\jquery.cleditor.css" />
+    <Content Include="BugTemptrash\css\codemirror\codemirror.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\3024-day.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\3024-night.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\ambiance-mobile.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\ambiance.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\base16-dark.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\base16-light.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\blackboard.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\cobalt.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\eclipse.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\elegant.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\erlang-dark.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\lesser-dark.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\midnight.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\monokai.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\neat.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\night.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\paraiso-dark.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\paraiso-light.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\rubyblue.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\solarized.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\the-matrix.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\tomorrow-night-eighties.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\twilight.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\vibrant-ink.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\xq-dark.css" />
+    <Content Include="BugTemptrash\css\codemirror\theme\xq-light.css" />
+    <Content Include="BugTemptrash\css\elfinder\elfinder.min.css" />
+    <Content Include="BugTemptrash\css\fancybox\jquery.fancybox.css" />
+    <Content Include="BugTemptrash\css\filetree\jqueryFileTree.css" />
+    <Content Include="BugTemptrash\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="BugTemptrash\css\fullcalendar\fullcalendar.css" />
+    <Content Include="BugTemptrash\css\icons\font-awesome.min.css" />
+    <Content Include="BugTemptrash\css\jquery\jquery-ui.min.css" />
+    <Content Include="BugTemptrash\css\mcustomscrollbar\jquery.mCustomScrollbar.css" />
+    <Content Include="BugTemptrash\css\mystyles.css" />
+    <Content Include="BugTemptrash\css\select2\select2.css" />
+    <Content Include="BugTemptrash\css\shbrush\shCoreDefault.css" />
+    <Content Include="BugTemptrash\css\shbrush\shThemeDefault.css" />
+    <Content Include="BugTemptrash\css\stepy\jquery.stepy.css" />
+    <Content Include="BugTemptrash\css\stylesheet.css" />
+    <Content Include="BugTemptrash\css\stylesheets.css" />
+    <Content Include="BugTemptrash\css\themes.css" />
+    <Content Include="BugTemptrash\css\validationengine\validationEngine.css" />
+    <Content Include="BugTemptrash\email_sample_1.html" />
+    <Content Include="BugTemptrash\email_sample_2.html" />
+    <Content Include="BugTemptrash\email_sample_3.html" />
+    <Content Include="BugTemptrash\email_sample_4.html" />
+    <Content Include="BugTemptrash\form_editors.html" />
+    <Content Include="BugTemptrash\form_elements.html" />
+    <Content Include="BugTemptrash\form_files.html" />
+    <Content Include="BugTemptrash\form_validation.html" />
+    <Content Include="BugTemptrash\img\background\bg_num1.jpg" />
+    <Content Include="BugTemptrash\img\background\bg_num2.jpg" />
+    <Content Include="BugTemptrash\img\background\bg_num3.jpg" />
+    <Content Include="BugTemptrash\img\background\bg_num4.jpg" />
+    <Content Include="BugTemptrash\img\background\blight.png" />
+    <Content Include="BugTemptrash\img\background\blight_ltr.png" />
+    <Content Include="BugTemptrash\img\background\blight_rtl.png" />
+    <Content Include="BugTemptrash\img\background\bt_cubs.png" />
+    <Content Include="BugTemptrash\img\background\bt_cubs_a.png" />
+    <Content Include="BugTemptrash\img\background\light.png" />
+    <Content Include="BugTemptrash\img\background\light_ltr.png" />
+    <Content Include="BugTemptrash\img\background\light_rtl.png" />
+    <Content Include="BugTemptrash\img\background\splash_blue.png" />
+    <Content Include="BugTemptrash\img\background\splash_white.png" />
+    <Content Include="BugTemptrash\img\background\wlight.png" />
+    <Content Include="BugTemptrash\img\background\wlight_ltr.png" />
+    <Content Include="BugTemptrash\img\background\wlight_rtl.png" />
+    <Content Include="BugTemptrash\img\elfinder\arrows-active.png" />
+    <Content Include="BugTemptrash\img\elfinder\arrows-normal.png" />
+    <Content Include="BugTemptrash\img\elfinder\crop.gif" />
+    <Content Include="BugTemptrash\img\elfinder\dialogs.png" />
+    <Content Include="BugTemptrash\img\elfinder\icons-big.png" />
+    <Content Include="BugTemptrash\img\elfinder\icons-small.png" />
+    <Content Include="BugTemptrash\img\elfinder\logo.png" />
+    <Content Include="BugTemptrash\img\elfinder\progress.gif" />
+    <Content Include="BugTemptrash\img\elfinder\quicklook-bg.png" />
+    <Content Include="BugTemptrash\img\elfinder\quicklook-icons.png" />
+    <Content Include="BugTemptrash\img\elfinder\resize.png" />
+    <Content Include="BugTemptrash\img\elfinder\spinner-mini.gif" />
+    <Content Include="BugTemptrash\img\elfinder\toolbar.png" />
+    <Content Include="BugTemptrash\img\example\example_150x115.jpg" />
+    <Content Include="BugTemptrash\img\example\example_500x380.jpg" />
+    <Content Include="BugTemptrash\img\example\photo\img_2.jpg" />
+    <Content Include="BugTemptrash\img\example\photo\img_2s.jpg" />
+    <Content Include="BugTemptrash\img\example\photo\img_3.jpg" />
+    <Content Include="BugTemptrash\img\example\photo\img_3s.jpg" />
+    <Content Include="BugTemptrash\img\example\photo\img_4.jpg" />
+    <Content Include="BugTemptrash\img\example\photo\img_4s.jpg" />
+    <Content Include="BugTemptrash\img\example\user\alexey.jpg" />
+    <Content Include="BugTemptrash\img\example\user\alexey_s.jpg" />
+    <Content Include="BugTemptrash\img\example\user\alexey_ss.jpg" />
+    <Content Include="BugTemptrash\img\example\user\dmitry.jpg" />
+    <Content Include="BugTemptrash\img\example\user\dmitry_b.jpg" />
+    <Content Include="BugTemptrash\img\example\user\dmitry_s.jpg" />
+    <Content Include="BugTemptrash\img\example\user\dmitry_ss.jpg" />
+    <Content Include="BugTemptrash\img\example\user\helen.jpg" />
+    <Content Include="BugTemptrash\img\example\user\helen_s.jpg" />
+    <Content Include="BugTemptrash\img\example\user\helen_ss.jpg" />
+    <Content Include="BugTemptrash\img\example\user\olga.jpg" />
+    <Content Include="BugTemptrash\img\example\user\olga_s.jpg" />
+    <Content Include="BugTemptrash\img\example\user\olga_ss.jpg" />
+    <Content Include="BugTemptrash\img\example\user_bg.jpg" />
+    <Content Include="BugTemptrash\img\fancybox\blank.gif" />
+    <Content Include="BugTemptrash\img\fancybox\fancybox_loading.gif" />
+    <Content Include="BugTemptrash\img\fancybox\fancybox_overlay.png" />
+    <Content Include="BugTemptrash\img\fancybox\fancybox_sprite.png" />
+    <Content Include="BugTemptrash\img\filetree\application.png" />
+    <Content Include="BugTemptrash\img\filetree\code.png" />
+    <Content Include="BugTemptrash\img\filetree\css.png" />
+    <Content Include="BugTemptrash\img\filetree\db.png" />
+    <Content Include="BugTemptrash\img\filetree\directory.png" />
+    <Content Include="BugTemptrash\img\filetree\doc.png" />
+    <Content Include="BugTemptrash\img\filetree\file.png" />
+    <Content Include="BugTemptrash\img\filetree\film.png" />
+    <Content Include="BugTemptrash\img\filetree\flash.png" />
+    <Content Include="BugTemptrash\img\filetree\folder_open.png" />
+    <Content Include="BugTemptrash\img\filetree\html.png" />
+    <Content Include="BugTemptrash\img\filetree\java.png" />
+    <Content Include="BugTemptrash\img\filetree\linux.png" />
+    <Content Include="BugTemptrash\img\filetree\music.png" />
+    <Content Include="BugTemptrash\img\filetree\pdf.png" />
+    <Content Include="BugTemptrash\img\filetree\php.png" />
+    <Content Include="BugTemptrash\img\filetree\picture.png" />
+    <Content Include="BugTemptrash\img\filetree\ppt.png" />
+    <Content Include="BugTemptrash\img\filetree\psd.png" />
+    <Content Include="BugTemptrash\img\filetree\ruby.png" />
+    <Content Include="BugTemptrash\img\filetree\script.png" />
+    <Content Include="BugTemptrash\img\filetree\spinner.gif" />
+    <Content Include="BugTemptrash\img\filetree\txt.png" />
+    <Content Include="BugTemptrash\img\filetree\xls.png" />
+    <Content Include="BugTemptrash\img\filetree\zip.png" />
+    <Content Include="BugTemptrash\img\ibutton\ibutton-slider-default.png" />
+    <Content Include="BugTemptrash\img\jqueryui\animated-overlay.gif" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-icons_222222_256x240.png" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-icons_228ef1_256x240.png" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-icons_ef8c08_256x240.png" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-icons_ffd27a_256x240.png" />
+    <Content Include="BugTemptrash\img\jqueryui\ui-icons_ffffff_256x240.png" />
+    <Content Include="BugTemptrash\img\loader.gif" />
+    <Content Include="BugTemptrash\img\logo.png" />
+    <Content Include="BugTemptrash\img\logob.png" />
+    <Content Include="BugTemptrash\img\select2\select2-spinner.gif" />
+    <Content Include="BugTemptrash\img\select2\select2.png" />
+    <Content Include="BugTemptrash\img\select2\select2x2.png" />
+    <Content Include="BugTemptrash\img\uniform\bg-input-focus.png" />
+    <Content Include="BugTemptrash\img\uniform\bg-input.png" />
+    <Content Include="BugTemptrash\img\uniform\sprite.png" />
+    <Content Include="BugTemptrash\img\user.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num1.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num10.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num11.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num12.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num13.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num14.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num15.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num16.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num2.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num3.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num4.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num5.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num6.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num7.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num8.jpg" />
+    <Content Include="BugTemptrash\img\wallpapers\wall_num9.jpg" />
+    <Content Include="BugTemptrash\index.html" />
+    <Content Include="BugTemptrash\js\actions.js" />
+    <Content Include="BugTemptrash\js\charts.js" />
+    <Content Include="BugTemptrash\js\maps.js" />
+    <Content Include="BugTemptrash\js\plugins.js" />
+    <Content Include="BugTemptrash\js\plugins\bootstrap\bootstrap-file-input.js" />
+    <Content Include="BugTemptrash\js\plugins\bootstrap\bootstrap.min.js" />
+    <Content Include="BugTemptrash\js\plugins\cleditor\jquery.cleditor.min.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\comment\comment.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\comment\continuecomment.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\dialog\dialog.css" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\dialog\dialog.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\display\fullscreen.css" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\display\fullscreen.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\display\placeholder.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\edit\closebrackets.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\edit\closetag.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\edit\continuelist.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\edit\matchbrackets.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\edit\matchtags.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\edit\trailingspace.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\fold\brace-fold.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\fold\comment-fold.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\fold\foldcode.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\fold\foldgutter.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\fold\indent-fold.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\fold\xml-fold.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\hint\anyword-hint.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\hint\css-hint.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\hint\html-hint.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\hint\javascript-hint.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\hint\pig-hint.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\hint\python-hint.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\hint\show-hint.css" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\hint\show-hint.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\hint\xml-hint.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\lint\coffeescript-lint.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\lint\css-lint.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\lint\javascript-lint.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\lint\json-lint.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\lint\lint.css" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\lint\lint.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\merge\dep\diff_match_patch.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\merge\merge.css" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\merge\merge.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\mode\loadmode.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\mode\multiplex.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\mode\multiplex_test.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\mode\overlay.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\runmode\colorize.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\runmode\runmode-standalone.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\runmode\runmode.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\runmode\runmode.node.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\scroll\scrollpastend.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\search\match-highlighter.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\search\search.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\search\searchcursor.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\selection\active-line.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\selection\mark-selection.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\tern\tern.css" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\tern\tern.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\addon\tern\worker.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\codemirror.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\apl\apl.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\apl\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\asterisk\asterisk.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\asterisk\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\clike\clike.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\clike\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\clike\scala.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\clojure\clojure.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\clojure\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\cobol\cobol.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\cobol\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\coffeescript\coffeescript.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\coffeescript\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\commonlisp\commonlisp.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\commonlisp\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\css\css.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\css\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\css\scss.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\css\scss_test.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\css\test.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\diff\diff.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\diff\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\dtd\dtd.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\dtd\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\d\d.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\d\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\ecl\ecl.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\ecl\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\erlang\erlang.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\erlang\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\fortran\fortran.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\fortran\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\gas\gas.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\gas\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\gfm\gfm.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\gfm\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\gfm\test.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\go\go.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\go\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\groovy\groovy.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\groovy\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\haml\haml.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\haml\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\haml\test.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\haskell\haskell.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\haskell\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\haxe\haxe.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\haxe\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\htmlembedded\htmlembedded.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\htmlembedded\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\htmlmixed\htmlmixed.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\htmlmixed\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\http\http.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\http\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\jade\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\jade\jade.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\javascript\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\javascript\javascript.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\javascript\test.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\javascript\typescript.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\jinja2\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\jinja2\jinja2.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\less\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\less\less.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\livescript\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\livescript\livescript.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\lua\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\lua\lua.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\markdown\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\markdown\markdown.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\markdown\test.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\meta.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\mirc\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\mirc\mirc.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\nginx\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\nginx\nginx.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\ntriples\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\ntriples\ntriples.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\ocaml\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\ocaml\ocaml.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\octave\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\octave\octave.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\pascal\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\pascal\pascal.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\perl\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\perl\perl.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\php\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\php\php.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\pig\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\pig\pig.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\properties\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\properties\properties.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\python\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\python\python.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\q\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\q\q.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\rpm\changes\changes.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\rpm\changes\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\rpm\spec\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\rpm\spec\spec.css" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\rpm\spec\spec.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\rst\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\rst\rst.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\ruby\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\ruby\ruby.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\rust\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\rust\rust.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\r\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\r\r.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\sass\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\sass\sass.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\scheme\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\scheme\scheme.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\shell\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\shell\shell.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\sieve\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\sieve\sieve.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\smalltalk\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\smalltalk\smalltalk.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\smartymixed\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\smartymixed\smartymixed.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\smarty\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\smarty\smarty.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\sparql\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\sparql\sparql.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\sql\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\sql\sql.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\stex\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\stex\stex.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\stex\test.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\tcl\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\tcl\tcl.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\tiddlywiki\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\tiddlywiki\tiddlywiki.css" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\tiddlywiki\tiddlywiki.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\tiki\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\tiki\tiki.css" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\tiki\tiki.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\toml\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\toml\toml.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\turtle\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\turtle\turtle.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\vbscript\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\vbscript\vbscript.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\vb\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\vb\vb.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\velocity\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\velocity\velocity.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\verilog\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\verilog\verilog.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\xml\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\xml\xml.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\xquery\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\xquery\test.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\xquery\xquery.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\yaml\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\yaml\yaml.js" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\z80\index.html" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\z80\z80.js" />
+    <Content Include="BugTemptrash\js\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\elfinder.min.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.ar.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.bg.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.ca.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.cs.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.de.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.es.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.fr.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.hu.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.jp.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.LANG.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.nl.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.no.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.pl.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.pt_BR.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.ru.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\i18n\elfinder.zh_CN.js" />
+    <Content Include="BugTemptrash\js\plugins\elfinder\proxy\elFinderSupportVer1.js" />
+    <Content Include="BugTemptrash\js\plugins\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="BugTemptrash\js\plugins\filetree\jqueryFileTree.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.canvas.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.categories.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.errorbars.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.image.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="BugTemptrash\js\plugins\flot\jquery.flot.time.js" />
+    <Content Include="BugTemptrash\js\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="BugTemptrash\js\plugins\jquery\globalize.js" />
+    <Content Include="BugTemptrash\js\plugins\jquery\jquery-migrate.min.js" />
+    <Content Include="BugTemptrash\js\plugins\jquery\jquery-ui-timepicker-addon.js" />
+    <Content Include="BugTemptrash\js\plugins\jquery\jquery-ui.min.js" />
+    <Content Include="BugTemptrash\js\plugins\jquery\jquery.min.js" />
+    <Content Include="BugTemptrash\js\plugins\knob\jquery.knob.js" />
+    <Content Include="BugTemptrash\js\plugins\maskedinput\jquery.maskedinput.min.js" />
+    <Content Include="BugTemptrash\js\plugins\mcustomscrollbar\jquery.mCustomScrollbar.min.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\jquery.noty.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\layouts\bottom.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\layouts\bottomCenter.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\layouts\bottomLeft.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\layouts\bottomRight.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\layouts\center.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\layouts\centerLeft.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\layouts\centerRight.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\layouts\inline.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\layouts\top.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\layouts\topCenter.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\layouts\topLeft.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\layouts\topRight.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\promise.js" />
+    <Content Include="BugTemptrash\js\plugins\noty\themes\default.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\cs.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\da.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\de.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\el.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\es.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\et.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\fa.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\fi.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\fr-ca.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\fr.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\hr.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\hu.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\it.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\ja.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\ko.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\lv.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\nl.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\pl.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\pt-br.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\ro.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\ru.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\sr.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\i18n\sv.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.plupload.queue\img\buttons-disabled.png" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.plupload.queue\img\buttons.png" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.plupload.queue\img\delete.gif" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.plupload.queue\img\done.gif" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.plupload.queue\img\error.gif" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.plupload.queue\img\throbber.gif" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.plupload.queue\img\transp50.png" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.plupload.queue\jquery.plupload.queue.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.ui.plupload\css\jquery.ui.plupload.css" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.ui.plupload\img\plupload-bw.png" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.ui.plupload\img\plupload.png" />
+    <Content Include="BugTemptrash\js\plugins\plupload\jquery.ui.plupload\jquery.ui.plupload.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\plupload.browserplus.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\plupload.flash.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\plupload.flash.swf" />
+    <Content Include="BugTemptrash\js\plugins\plupload\plupload.full.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\plupload.gears.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\plupload.html4.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\plupload.html5.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\plupload.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\plupload.silverlight.js" />
+    <Content Include="BugTemptrash\js\plugins\plupload\plupload.silverlight.xap" />
+    <Content Include="BugTemptrash\js\plugins\select2\select2.min.js" />
+    <Content Include="BugTemptrash\js\plugins\shbrush\shBrushCss.js" />
+    <Content Include="BugTemptrash\js\plugins\shbrush\shBrushJScript.js" />
+    <Content Include="BugTemptrash\js\plugins\shbrush\shBrushXml.js" />
+    <Content Include="BugTemptrash\js\plugins\shbrush\shCore.js" />
+    <Content Include="BugTemptrash\js\plugins\shbrush\XRegExp.js" />
+    <Content Include="BugTemptrash\js\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="BugTemptrash\js\plugins\stepy\jquery.stepy.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tagsinput\jquery.tagsinput.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\license.txt" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\img\wline.gif" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\themes\modern\theme.min.js" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\tinymce.min.js" />
+    <Content Include="BugTemptrash\js\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\jquery.validationEngine.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-cz.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-da.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-de.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-en.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-es.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-et.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-fa.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-fi.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-fr.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-hr.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-hu.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-it.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-ja.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-nl.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-no.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-pl.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-pt.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-pt_BR.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-ro.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-ru.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-se.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-tr.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-vi.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-zh_CN.js" />
+    <Content Include="BugTemptrash\js\plugins\validationengine\languages\jquery.validationEngine-zh_TW.js" />
+    <Content Include="BugTemptrash\js\portlet.js" />
+    <Content Include="BugTemptrash\js\settings.js" />
+    <Content Include="BugTemptrash\sample_contacts.html" />
+    <Content Include="BugTemptrash\sample_edit_profile.html" />
+    <Content Include="BugTemptrash\sample_error_403.html" />
+    <Content Include="BugTemptrash\sample_error_404.html" />
+    <Content Include="BugTemptrash\sample_error_500.html" />
+    <Content Include="BugTemptrash\sample_error_503.html" />
+    <Content Include="BugTemptrash\sample_error_504.html" />
+    <Content Include="BugTemptrash\sample_invoice.html" />
+    <Content Include="BugTemptrash\sample_login.html" />
+    <Content Include="BugTemptrash\sample_mail.html" />
+    <Content Include="BugTemptrash\sample_profile.html" />
+    <Content Include="BugTemptrash\sample_profile_social.html" />
+    <Content Include="BugTemptrash\sample_registration.html" />
+    <Content Include="BugTemptrash\sample_search.html" />
+    <Content Include="BugTemptrash\sample_tasks.html" />
+    <Content Include="BugTemptrash\sample_timeline.html" />
+    <Content Include="BugTemptrash\widgets.html" />
+    <Content Include="BugTemp\assets\ajax_modal_content.html" />
+    <Content Include="BugTemp\assets\elfinder\MySQLStorage.sql" />
+    <Content Include="BugTemp\assets\filetree\jqueryFileTree.asp" />
+    <Content Include="BugTemp\assets\filetree\jqueryFileTree.aspx" />
+    <Content Include="BugTemp\assets\settings.html" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL0FuaW1hbCA0OC5qcGc1371280868.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL0xvdHVzIFNwb3J0IEV4aWdlIEd0MyAwMS5qcGc1371280868.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL1Bob3Rvc2hvcF9NdWx0aS1jb2xvdXJlZF9idXR0ZXJmbGllc18wMjM3MzJfLmpwZw1371280314.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL1dvcmxkX290aGVyX3dvcmxkX0Nvc3RhX1JpY2FfX1B1bnRhcmVuYXNfMDIzNzQ2Xy5qcGc1371280316.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL1F1aWV0IEdldGF3YXksIExha2UgVGFob2UsIE5ldmFkYS01NjUzNjIuanBlZw1371280314.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL1Nwb3J0X0V4dHJlbWVfX1dhdmVzX19PY2Vhbl9fUmlza19fU3VyZmluZ18wMjM3MzFfLmpwZw1371280314.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL1NwYWNlX0xhdW5jaGluZ19wYWRfMDIzNzI0Xy5qcGc1371280314.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL1NyaXRuZXlfU3BlYXJzMl8xOTIweDEyMDAuanBn1371280315.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL3BldWdlb3RfOTA4cmMtMTYwMHgxMjAwLmpwZw1371280313.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL3doaXRlLWFzdG9uLW1hcnRpbi13YWxscGFwZXItMTkyMHgxMDgwLTEwMDgwNzguanBn1371280315.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL3doaXRlX2N1cnZlZF9idWlsZGluZy0xOTIweDEyMDAuanBn1371280315.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL3dpbmRvd3NfN19fX2RyYWdvbi0yNTYweDE2MDAuanBn1371280316.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL3dpZGUtd2FsbHBhcGVyLTE5MjB4MTA4MC0wMDEuanBn1371280315.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL3dpZGUtd2FsbHBhcGVyLTE5MjB4MTA4MC0wMDEyMzQuanBn1371280316.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL3U5NjQ0XzMxNTFfbG92ZV80LmpwZw1371280315.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_SW1hZ2VzL3UzMDEzXzEyNzhfNTM0MDUtMTYwMHgxMjAwLmpwZw1371280315.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_TUlNRS1UeXBlcy92bXdhcmUtd2luLWllOC1lbGZpbmRlci5wbmc1371279794.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_TUlNRS1UeXBlcy9maXNoZXMuanBn1371279793.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_TUlNRS1UeXBlcy9pTWFjLnBzZA1371279793.png" />
+    <Content Include="BugTemp\assets\uploads\.tmb\l1_TUlNRS1UeXBlcy9waHVrZXQudGlmZg1371279794.png" />
+    <Content Include="BugTemp\assets\uploads\Images\Animal 48.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\Lotus Sport Exige Gt3 01.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\peugeot_908rc-1600x1200.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\Photoshop_Multi-coloured_butterflies_023732_.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\Quiet Getaway, Lake Tahoe, Nevada-565362.jpeg" />
+    <Content Include="BugTemp\assets\uploads\Images\Space_Launching_pad_023724_.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\Sport_Extreme__Waves__Ocean__Risk__Surfing_023731_.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\Sritney_Spears2_1920x1200.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\u3013_1278_53405-1600x1200.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\u9644_3151_love_4.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\white-aston-martin-wallpaper-1920x1080-1008078.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\white_curved_building-1920x1200.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\wide-wallpaper-1920x1080-001.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\wide-wallpaper-1920x1080-001234.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\windows_7___dragon-2560x1600.jpg" />
+    <Content Include="BugTemp\assets\uploads\Images\World_other_world_Costa_Rica__Puntarenas_023746_.jpg" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\books.xml" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\elfinder.css" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\elfinder.full.js" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\fireworks.swf" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\fishes.jpg" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\google.html" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\phuket.tiff" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\rm.wav" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\test-pivot.sql" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\virus.exe" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\vmware-win-ie8-elfinder.png" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\YUICompressor.java" />
+    <Content Include="BugTemp\component_blocks.html" />
+    <Content Include="BugTemp\component_buttons.html" />
+    <Content Include="BugTemp\component_calendar.html" />
+    <Content Include="BugTemp\component_charts.html" />
+    <Content Include="BugTemp\component_gallery.html" />
+    <Content Include="BugTemp\component_icons.html" />
+    <Content Include="BugTemp\component_layout_blank.html" />
+    <Content Include="BugTemp\component_layout_custom.html" />
+    <Content Include="BugTemp\component_layout_fixed.html" />
+    <Content Include="BugTemp\component_layout_scroll.html" />
+    <Content Include="BugTemp\component_layout_white.html" />
+    <Content Include="BugTemp\component_lists.html" />
+    <Content Include="BugTemp\component_maps.html" />
+    <Content Include="BugTemp\component_messages.html" />
+    <Content Include="BugTemp\component_modals.html" />
+    <Content Include="BugTemp\component_portlet.html" />
+    <Content Include="BugTemp\component_progress.html" />
+    <Content Include="BugTemp\component_table_default.html" />
+    <Content Include="BugTemp\component_table_sortable.html" />
+    <Content Include="BugTemp\component_tabs.html" />
+    <Content Include="BugTemp\component_typography.html" />
+    <Content Include="BugTemp\css\backgrounds.css" />
+    <Content Include="BugTemp\css\bootstrap\bootstrap.min.css" />
+    <Content Include="BugTemp\css\cleditor\buttons.gif" />
+    <Content Include="BugTemp\css\cleditor\jquery.cleditor.css" />
+    <Content Include="BugTemp\css\codemirror\codemirror.css" />
+    <Content Include="BugTemp\css\codemirror\theme\3024-day.css" />
+    <Content Include="BugTemp\css\codemirror\theme\3024-night.css" />
+    <Content Include="BugTemp\css\codemirror\theme\ambiance-mobile.css" />
+    <Content Include="BugTemp\css\codemirror\theme\ambiance.css" />
+    <Content Include="BugTemp\css\codemirror\theme\base16-dark.css" />
+    <Content Include="BugTemp\css\codemirror\theme\base16-light.css" />
+    <Content Include="BugTemp\css\codemirror\theme\blackboard.css" />
+    <Content Include="BugTemp\css\codemirror\theme\cobalt.css" />
+    <Content Include="BugTemp\css\codemirror\theme\eclipse.css" />
+    <Content Include="BugTemp\css\codemirror\theme\elegant.css" />
+    <Content Include="BugTemp\css\codemirror\theme\erlang-dark.css" />
+    <Content Include="BugTemp\css\codemirror\theme\lesser-dark.css" />
+    <Content Include="BugTemp\css\codemirror\theme\midnight.css" />
+    <Content Include="BugTemp\css\codemirror\theme\monokai.css" />
+    <Content Include="BugTemp\css\codemirror\theme\neat.css" />
+    <Content Include="BugTemp\css\codemirror\theme\night.css" />
+    <Content Include="BugTemp\css\codemirror\theme\paraiso-dark.css" />
+    <Content Include="BugTemp\css\codemirror\theme\paraiso-light.css" />
+    <Content Include="BugTemp\css\codemirror\theme\rubyblue.css" />
+    <Content Include="BugTemp\css\codemirror\theme\solarized.css" />
+    <Content Include="BugTemp\css\codemirror\theme\the-matrix.css" />
+    <Content Include="BugTemp\css\codemirror\theme\tomorrow-night-eighties.css" />
+    <Content Include="BugTemp\css\codemirror\theme\twilight.css" />
+    <Content Include="BugTemp\css\codemirror\theme\vibrant-ink.css" />
+    <Content Include="BugTemp\css\codemirror\theme\xq-dark.css" />
+    <Content Include="BugTemp\css\codemirror\theme\xq-light.css" />
+    <Content Include="BugTemp\css\elfinder\elfinder.min.css" />
+    <Content Include="BugTemp\css\fancybox\jquery.fancybox.css" />
+    <Content Include="BugTemp\css\filetree\jqueryFileTree.css" />
+    <Content Include="BugTemp\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="BugTemp\css\fullcalendar\fullcalendar.css" />
+    <Content Include="BugTemp\css\icons\font-awesome.min.css" />
+    <Content Include="BugTemp\css\jquery\jquery-ui.min.css" />
+    <Content Include="BugTemp\css\mcustomscrollbar\jquery.mCustomScrollbar.css" />
+    <Content Include="BugTemp\css\mystyles.css" />
+    <Content Include="BugTemp\css\select2\select2.css" />
+    <Content Include="BugTemp\css\shbrush\shCoreDefault.css" />
+    <Content Include="BugTemp\css\shbrush\shThemeDefault.css" />
+    <Content Include="BugTemp\css\stepy\jquery.stepy.css" />
+    <Content Include="BugTemp\css\stylesheet.css" />
+    <Content Include="BugTemp\css\stylesheets.css" />
+    <Content Include="BugTemp\css\themes.css" />
+    <Content Include="BugTemp\css\validationengine\validationEngine.css" />
+    <Content Include="BugTemp\email_sample_1.html" />
+    <Content Include="BugTemp\email_sample_2.html" />
+    <Content Include="BugTemp\email_sample_3.html" />
+    <Content Include="BugTemp\email_sample_4.html" />
+    <Content Include="BugTemp\form_editors.html" />
+    <Content Include="BugTemp\form_elements.html" />
+    <Content Include="BugTemp\form_files.html" />
+    <Content Include="BugTemp\form_validation.html" />
+    <Content Include="BugTemp\img\background\bg_num1.jpg" />
+    <Content Include="BugTemp\img\background\bg_num2.jpg" />
+    <Content Include="BugTemp\img\background\bg_num3.jpg" />
+    <Content Include="BugTemp\img\background\bg_num4.jpg" />
+    <Content Include="BugTemp\img\background\blight.png" />
+    <Content Include="BugTemp\img\background\blight_ltr.png" />
+    <Content Include="BugTemp\img\background\blight_rtl.png" />
+    <Content Include="BugTemp\img\background\bt_cubs.png" />
+    <Content Include="BugTemp\img\background\bt_cubs_a.png" />
+    <Content Include="BugTemp\img\background\light.png" />
+    <Content Include="BugTemp\img\background\light_ltr.png" />
+    <Content Include="BugTemp\img\background\light_rtl.png" />
+    <Content Include="BugTemp\img\background\splash_blue.png" />
+    <Content Include="BugTemp\img\background\splash_white.png" />
+    <Content Include="BugTemp\img\background\wlight.png" />
+    <Content Include="BugTemp\img\background\wlight_ltr.png" />
+    <Content Include="BugTemp\img\background\wlight_rtl.png" />
+    <Content Include="BugTemp\img\elfinder\arrows-active.png" />
+    <Content Include="BugTemp\img\elfinder\arrows-normal.png" />
+    <Content Include="BugTemp\img\elfinder\crop.gif" />
+    <Content Include="BugTemp\img\elfinder\dialogs.png" />
+    <Content Include="BugTemp\img\elfinder\icons-big.png" />
+    <Content Include="BugTemp\img\elfinder\icons-small.png" />
+    <Content Include="BugTemp\img\elfinder\logo.png" />
+    <Content Include="BugTemp\img\elfinder\progress.gif" />
+    <Content Include="BugTemp\img\elfinder\quicklook-bg.png" />
+    <Content Include="BugTemp\img\elfinder\quicklook-icons.png" />
+    <Content Include="BugTemp\img\elfinder\resize.png" />
+    <Content Include="BugTemp\img\elfinder\spinner-mini.gif" />
+    <Content Include="BugTemp\img\elfinder\toolbar.png" />
+    <Content Include="BugTemp\img\example\example_150x115.jpg" />
+    <Content Include="BugTemp\img\example\example_500x380.jpg" />
+    <Content Include="BugTemp\img\example\photo\img_2.jpg" />
+    <Content Include="BugTemp\img\example\photo\img_2s.jpg" />
+    <Content Include="BugTemp\img\example\photo\img_3.jpg" />
+    <Content Include="BugTemp\img\example\photo\img_3s.jpg" />
+    <Content Include="BugTemp\img\example\photo\img_4.jpg" />
+    <Content Include="BugTemp\img\example\photo\img_4s.jpg" />
+    <Content Include="BugTemp\img\example\user\alexey.jpg" />
+    <Content Include="BugTemp\img\example\user\alexey_s.jpg" />
+    <Content Include="BugTemp\img\example\user\alexey_ss.jpg" />
+    <Content Include="BugTemp\img\example\user\dmitry.jpg" />
+    <Content Include="BugTemp\img\example\user\dmitry_b.jpg" />
+    <Content Include="BugTemp\img\example\user\dmitry_s.jpg" />
+    <Content Include="BugTemp\img\example\user\dmitry_ss.jpg" />
+    <Content Include="BugTemp\img\example\user\helen.jpg" />
+    <Content Include="BugTemp\img\example\user\helen_s.jpg" />
+    <Content Include="BugTemp\img\example\user\helen_ss.jpg" />
+    <Content Include="BugTemp\img\example\user\olga.jpg" />
+    <Content Include="BugTemp\img\example\user\olga_s.jpg" />
+    <Content Include="BugTemp\img\example\user\olga_ss.jpg" />
+    <Content Include="BugTemp\img\example\user_bg.jpg" />
+    <Content Include="BugTemp\img\fancybox\blank.gif" />
+    <Content Include="BugTemp\img\fancybox\fancybox_loading.gif" />
+    <Content Include="BugTemp\img\fancybox\fancybox_overlay.png" />
+    <Content Include="BugTemp\img\fancybox\fancybox_sprite.png" />
+    <Content Include="BugTemp\img\filetree\application.png" />
+    <Content Include="BugTemp\img\filetree\code.png" />
+    <Content Include="BugTemp\img\filetree\css.png" />
+    <Content Include="BugTemp\img\filetree\db.png" />
+    <Content Include="BugTemp\img\filetree\directory.png" />
+    <Content Include="BugTemp\img\filetree\doc.png" />
+    <Content Include="BugTemp\img\filetree\file.png" />
+    <Content Include="BugTemp\img\filetree\film.png" />
+    <Content Include="BugTemp\img\filetree\flash.png" />
+    <Content Include="BugTemp\img\filetree\folder_open.png" />
+    <Content Include="BugTemp\img\filetree\html.png" />
+    <Content Include="BugTemp\img\filetree\java.png" />
+    <Content Include="BugTemp\img\filetree\linux.png" />
+    <Content Include="BugTemp\img\filetree\music.png" />
+    <Content Include="BugTemp\img\filetree\pdf.png" />
+    <Content Include="BugTemp\img\filetree\php.png" />
+    <Content Include="BugTemp\img\filetree\picture.png" />
+    <Content Include="BugTemp\img\filetree\ppt.png" />
+    <Content Include="BugTemp\img\filetree\psd.png" />
+    <Content Include="BugTemp\img\filetree\ruby.png" />
+    <Content Include="BugTemp\img\filetree\script.png" />
+    <Content Include="BugTemp\img\filetree\spinner.gif" />
+    <Content Include="BugTemp\img\filetree\txt.png" />
+    <Content Include="BugTemp\img\filetree\xls.png" />
+    <Content Include="BugTemp\img\filetree\zip.png" />
+    <Content Include="BugTemp\img\ibutton\ibutton-slider-default.png" />
+    <Content Include="BugTemp\img\jqueryui\animated-overlay.gif" />
+    <Content Include="BugTemp\img\jqueryui\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="BugTemp\img\jqueryui\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="BugTemp\img\jqueryui\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="BugTemp\img\jqueryui\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="BugTemp\img\jqueryui\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="BugTemp\img\jqueryui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="BugTemp\img\jqueryui\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="BugTemp\img\jqueryui\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="BugTemp\img\jqueryui\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="BugTemp\img\jqueryui\ui-icons_222222_256x240.png" />
+    <Content Include="BugTemp\img\jqueryui\ui-icons_228ef1_256x240.png" />
+    <Content Include="BugTemp\img\jqueryui\ui-icons_ef8c08_256x240.png" />
+    <Content Include="BugTemp\img\jqueryui\ui-icons_ffd27a_256x240.png" />
+    <Content Include="BugTemp\img\jqueryui\ui-icons_ffffff_256x240.png" />
+    <Content Include="BugTemp\img\loader.gif" />
+    <Content Include="BugTemp\img\logo.png" />
+    <Content Include="BugTemp\img\logob.png" />
+    <Content Include="BugTemp\img\select2\select2-spinner.gif" />
+    <Content Include="BugTemp\img\select2\select2.png" />
+    <Content Include="BugTemp\img\select2\select2x2.png" />
+    <Content Include="BugTemp\img\uniform\bg-input-focus.png" />
+    <Content Include="BugTemp\img\uniform\bg-input.png" />
+    <Content Include="BugTemp\img\uniform\sprite.png" />
+    <Content Include="BugTemp\img\user.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num1.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num10.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num11.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num12.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num13.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num14.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num15.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num16.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num2.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num3.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num4.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num5.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num6.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num7.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num8.jpg" />
+    <Content Include="BugTemp\img\wallpapers\wall_num9.jpg" />
+    <Content Include="BugTemp\index.html" />
+    <Content Include="BugTemp\js\actions.js" />
+    <Content Include="BugTemp\js\charts.js" />
+    <Content Include="BugTemp\js\maps.js" />
+    <Content Include="BugTemp\js\plugins.js" />
+    <Content Include="BugTemp\js\plugins\bootstrap\bootstrap-file-input.js" />
+    <Content Include="BugTemp\js\plugins\bootstrap\bootstrap.min.js" />
+    <Content Include="BugTemp\js\plugins\cleditor\jquery.cleditor.min.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\comment\comment.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\comment\continuecomment.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\dialog\dialog.css" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\dialog\dialog.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\display\fullscreen.css" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\display\fullscreen.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\display\placeholder.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\edit\closebrackets.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\edit\closetag.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\edit\continuelist.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\edit\matchbrackets.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\edit\matchtags.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\edit\trailingspace.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\fold\brace-fold.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\fold\comment-fold.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\fold\foldcode.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\fold\foldgutter.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\fold\indent-fold.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\fold\xml-fold.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\hint\anyword-hint.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\hint\css-hint.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\hint\html-hint.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\hint\javascript-hint.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\hint\pig-hint.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\hint\python-hint.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\hint\show-hint.css" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\hint\show-hint.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\hint\xml-hint.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\lint\coffeescript-lint.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\lint\css-lint.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\lint\javascript-lint.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\lint\json-lint.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\lint\lint.css" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\lint\lint.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\merge\dep\diff_match_patch.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\merge\merge.css" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\merge\merge.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\mode\loadmode.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\mode\multiplex.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\mode\multiplex_test.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\mode\overlay.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\runmode\colorize.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\runmode\runmode-standalone.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\runmode\runmode.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\runmode\runmode.node.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\scroll\scrollpastend.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\search\match-highlighter.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\search\search.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\search\searchcursor.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\selection\active-line.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\selection\mark-selection.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\tern\tern.css" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\tern\tern.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\addon\tern\worker.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\codemirror.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\apl\apl.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\apl\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\asterisk\asterisk.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\asterisk\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\clike\clike.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\clike\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\clike\scala.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\clojure\clojure.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\clojure\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\cobol\cobol.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\cobol\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\coffeescript\coffeescript.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\coffeescript\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\commonlisp\commonlisp.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\commonlisp\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\css\css.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\css\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\css\scss.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\css\scss_test.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\css\test.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\diff\diff.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\diff\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\dtd\dtd.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\dtd\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\d\d.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\d\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\ecl\ecl.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\ecl\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\erlang\erlang.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\erlang\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\fortran\fortran.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\fortran\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\gas\gas.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\gas\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\gfm\gfm.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\gfm\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\gfm\test.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\go\go.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\go\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\groovy\groovy.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\groovy\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\haml\haml.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\haml\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\haml\test.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\haskell\haskell.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\haskell\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\haxe\haxe.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\haxe\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\htmlembedded\htmlembedded.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\htmlembedded\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\htmlmixed\htmlmixed.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\htmlmixed\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\http\http.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\http\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\jade\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\jade\jade.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\javascript\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\javascript\javascript.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\javascript\test.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\javascript\typescript.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\jinja2\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\jinja2\jinja2.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\less\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\less\less.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\livescript\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\livescript\livescript.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\lua\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\lua\lua.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\markdown\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\markdown\markdown.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\markdown\test.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\meta.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\mirc\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\mirc\mirc.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\nginx\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\nginx\nginx.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\ntriples\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\ntriples\ntriples.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\ocaml\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\ocaml\ocaml.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\octave\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\octave\octave.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\pascal\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\pascal\pascal.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\perl\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\perl\perl.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\php\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\php\php.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\pig\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\pig\pig.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\properties\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\properties\properties.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\python\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\python\python.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\q\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\q\q.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\rpm\changes\changes.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\rpm\changes\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\rpm\spec\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\rpm\spec\spec.css" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\rpm\spec\spec.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\rst\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\rst\rst.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\ruby\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\ruby\ruby.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\rust\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\rust\rust.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\r\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\r\r.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\sass\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\sass\sass.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\scheme\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\scheme\scheme.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\shell\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\shell\shell.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\sieve\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\sieve\sieve.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\smalltalk\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\smalltalk\smalltalk.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\smartymixed\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\smartymixed\smartymixed.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\smarty\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\smarty\smarty.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\sparql\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\sparql\sparql.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\sql\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\sql\sql.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\stex\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\stex\stex.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\stex\test.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\tcl\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\tcl\tcl.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\tiddlywiki\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\tiddlywiki\tiddlywiki.css" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\tiddlywiki\tiddlywiki.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\tiki\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\tiki\tiki.css" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\tiki\tiki.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\toml\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\toml\toml.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\turtle\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\turtle\turtle.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\vbscript\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\vbscript\vbscript.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\vb\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\vb\vb.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\velocity\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\velocity\velocity.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\verilog\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\verilog\verilog.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\xml\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\xml\xml.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\xquery\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\xquery\test.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\xquery\xquery.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\yaml\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\yaml\yaml.js" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\z80\index.html" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\z80\z80.js" />
+    <Content Include="BugTemp\js\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\elfinder.min.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.ar.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.bg.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.ca.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.cs.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.de.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.es.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.fr.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.hu.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.jp.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.LANG.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.nl.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.no.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.pl.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.pt_BR.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.ru.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\i18n\elfinder.zh_CN.js" />
+    <Content Include="BugTemp\js\plugins\elfinder\proxy\elFinderSupportVer1.js" />
+    <Content Include="BugTemp\js\plugins\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="BugTemp\js\plugins\filetree\jqueryFileTree.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.canvas.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.categories.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.errorbars.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.image.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="BugTemp\js\plugins\flot\jquery.flot.time.js" />
+    <Content Include="BugTemp\js\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="BugTemp\js\plugins\jquery\globalize.js" />
+    <Content Include="BugTemp\js\plugins\jquery\jquery-migrate.min.js" />
+    <Content Include="BugTemp\js\plugins\jquery\jquery-ui-timepicker-addon.js" />
+    <Content Include="BugTemp\js\plugins\jquery\jquery-ui.min.js" />
+    <Content Include="BugTemp\js\plugins\jquery\jquery.min.js" />
+    <Content Include="BugTemp\js\plugins\knob\jquery.knob.js" />
+    <Content Include="BugTemp\js\plugins\maskedinput\jquery.maskedinput.min.js" />
+    <Content Include="BugTemp\js\plugins\mcustomscrollbar\jquery.mCustomScrollbar.min.js" />
+    <Content Include="BugTemp\js\plugins\noty\jquery.noty.js" />
+    <Content Include="BugTemp\js\plugins\noty\layouts\bottom.js" />
+    <Content Include="BugTemp\js\plugins\noty\layouts\bottomCenter.js" />
+    <Content Include="BugTemp\js\plugins\noty\layouts\bottomLeft.js" />
+    <Content Include="BugTemp\js\plugins\noty\layouts\bottomRight.js" />
+    <Content Include="BugTemp\js\plugins\noty\layouts\center.js" />
+    <Content Include="BugTemp\js\plugins\noty\layouts\centerLeft.js" />
+    <Content Include="BugTemp\js\plugins\noty\layouts\centerRight.js" />
+    <Content Include="BugTemp\js\plugins\noty\layouts\inline.js" />
+    <Content Include="BugTemp\js\plugins\noty\layouts\top.js" />
+    <Content Include="BugTemp\js\plugins\noty\layouts\topCenter.js" />
+    <Content Include="BugTemp\js\plugins\noty\layouts\topLeft.js" />
+    <Content Include="BugTemp\js\plugins\noty\layouts\topRight.js" />
+    <Content Include="BugTemp\js\plugins\noty\promise.js" />
+    <Content Include="BugTemp\js\plugins\noty\themes\default.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\cs.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\da.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\de.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\el.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\es.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\et.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\fa.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\fi.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\fr-ca.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\fr.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\hr.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\hu.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\it.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\ja.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\ko.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\lv.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\nl.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\pl.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\pt-br.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\ro.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\ru.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\sr.js" />
+    <Content Include="BugTemp\js\plugins\plupload\i18n\sv.js" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.plupload.queue\img\buttons-disabled.png" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.plupload.queue\img\buttons.png" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.plupload.queue\img\delete.gif" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.plupload.queue\img\done.gif" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.plupload.queue\img\error.gif" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.plupload.queue\img\throbber.gif" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.plupload.queue\img\transp50.png" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.plupload.queue\jquery.plupload.queue.js" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.ui.plupload\css\jquery.ui.plupload.css" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.ui.plupload\img\plupload-bw.png" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.ui.plupload\img\plupload.png" />
+    <Content Include="BugTemp\js\plugins\plupload\jquery.ui.plupload\jquery.ui.plupload.js" />
+    <Content Include="BugTemp\js\plugins\plupload\plupload.browserplus.js" />
+    <Content Include="BugTemp\js\plugins\plupload\plupload.flash.js" />
+    <Content Include="BugTemp\js\plugins\plupload\plupload.flash.swf" />
+    <Content Include="BugTemp\js\plugins\plupload\plupload.full.js" />
+    <Content Include="BugTemp\js\plugins\plupload\plupload.gears.js" />
+    <Content Include="BugTemp\js\plugins\plupload\plupload.html4.js" />
+    <Content Include="BugTemp\js\plugins\plupload\plupload.html5.js" />
+    <Content Include="BugTemp\js\plugins\plupload\plupload.js" />
+    <Content Include="BugTemp\js\plugins\plupload\plupload.silverlight.js" />
+    <Content Include="BugTemp\js\plugins\plupload\plupload.silverlight.xap" />
+    <Content Include="BugTemp\js\plugins\select2\select2.min.js" />
+    <Content Include="BugTemp\js\plugins\shbrush\shBrushCss.js" />
+    <Content Include="BugTemp\js\plugins\shbrush\shBrushJScript.js" />
+    <Content Include="BugTemp\js\plugins\shbrush\shBrushXml.js" />
+    <Content Include="BugTemp\js\plugins\shbrush\shCore.js" />
+    <Content Include="BugTemp\js\plugins\shbrush\XRegExp.js" />
+    <Content Include="BugTemp\js\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="BugTemp\js\plugins\stepy\jquery.stepy.min.js" />
+    <Content Include="BugTemp\js\plugins\tagsinput\jquery.tagsinput.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\license.txt" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\img\wline.gif" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="BugTemp\js\plugins\tinymce\themes\modern\theme.min.js" />
+    <Content Include="BugTemp\js\plugins\tinymce\tinymce.min.js" />
+    <Content Include="BugTemp\js\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\jquery.validationEngine.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-cz.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-da.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-de.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-en.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-es.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-et.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-fa.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-fi.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-fr.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-hr.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-hu.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-it.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-ja.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-nl.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-no.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-pl.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-pt.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-pt_BR.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-ro.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-ru.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-se.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-tr.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-vi.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-zh_CN.js" />
+    <Content Include="BugTemp\js\plugins\validationengine\languages\jquery.validationEngine-zh_TW.js" />
+    <Content Include="BugTemp\js\portlet.js" />
+    <Content Include="BugTemp\js\settings.js" />
+    <Content Include="BugTemp\sample_contacts.html" />
+    <Content Include="BugTemp\sample_edit_profile.html" />
+    <Content Include="BugTemp\sample_error_403.html" />
+    <Content Include="BugTemp\sample_error_404.html" />
+    <Content Include="BugTemp\sample_error_500.html" />
+    <Content Include="BugTemp\sample_error_503.html" />
+    <Content Include="BugTemp\sample_error_504.html" />
+    <Content Include="BugTemp\sample_invoice.html" />
+    <Content Include="BugTemp\sample_login.html" />
+    <Content Include="BugTemp\sample_mail.html" />
+    <Content Include="BugTemp\sample_profile.html" />
+    <Content Include="BugTemp\sample_profile_social.html" />
+    <Content Include="BugTemp\sample_registration.html" />
+    <Content Include="BugTemp\sample_search.html" />
+    <Content Include="BugTemp\sample_tasks.html" />
+    <Content Include="BugTemp\sample_timeline.html" />
+    <Content Include="BugTemp\widgets.html" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Crystal_Project_viewmag.png" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\jquery.dataTables.min.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\style.css" />
+    <Content Include="dark-blue-backgrounds.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="js\jquery.dataTables.min.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="plain-blue.jpg" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="BugTemptrash\assets\elfinder\connector.php" />
+    <Content Include="BugTemptrash\assets\elfinder\elFinder.class.php" />
+    <Content Include="BugTemptrash\assets\elfinder\elFinderConnector.class.php" />
+    <Content Include="BugTemptrash\assets\elfinder\elFinderVolumeDriver.class.php" />
+    <Content Include="BugTemptrash\assets\elfinder\elFinderVolumeLocalFileSystem.class.php" />
+    <Content Include="BugTemptrash\assets\elfinder\elFinderVolumeMySQL.class.php" />
+    <Content Include="BugTemptrash\assets\elfinder\mime.types" />
+    <Content Include="BugTemptrash\assets\filetree\jqueryFileTree.cf" />
+    <Content Include="BugTemptrash\assets\filetree\jqueryFileTree.jsp" />
+    <Content Include="BugTemptrash\assets\filetree\jqueryFileTree.php" />
+    <Content Include="BugTemptrash\assets\filetree\jqueryFileTree.pl" />
+    <Content Include="BugTemptrash\assets\filetree\jqueryFileTree.py" />
+    <Content Include="BugTemptrash\assets\filetree\jqueryFileTree.rb" />
+    <Content Include="BugTemptrash\assets\filetree\jqueryFileTree_huck.lasso" />
+    <Content Include="BugTemptrash\assets\filetree\jqueryFileTree_sabourdin.lasso" />
+    <Content Include="BugTemptrash\assets\pluploader\plupload.php" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\archive.rar" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\archive.tar.gz" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\archive.zip" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\elFinder.class.php" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\elFinder.py" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\milter-greylist.c" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\munin_httptime.sh" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\Payment Icons.zip" />
+    <Content Include="BugTemptrash\assets\uploads\MIME-Types\Supervisor.doc" />
+    <Content Include="BugTemptrash\css\bootstrap\bootstrap.css.map" />
+    <Content Include="BugTemptrash\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="BugTemptrash\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="BugTemptrash\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="BugTemptrash\css\fonts\FontAwesome.otf" />
+    <Content Include="BugTemptrash\js\plugins\codemirror\mode\livescript\livescript.ls" />
+    <Content Include="BugTemptrash\js\plugins\jquery\jquery-2.0.3.min.map" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\langs\readme.md" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\fonts\readme.md" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="BugTemptrash\js\plugins\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="BugTemp\assets\elfinder\connector.php" />
+    <Content Include="BugTemp\assets\elfinder\elFinder.class.php" />
+    <Content Include="BugTemp\assets\elfinder\elFinderConnector.class.php" />
+    <Content Include="BugTemp\assets\elfinder\elFinderVolumeDriver.class.php" />
+    <Content Include="BugTemp\assets\elfinder\elFinderVolumeLocalFileSystem.class.php" />
+    <Content Include="BugTemp\assets\elfinder\elFinderVolumeMySQL.class.php" />
+    <Content Include="BugTemp\assets\elfinder\mime.types" />
+    <Content Include="BugTemp\assets\filetree\jqueryFileTree.cf" />
+    <Content Include="BugTemp\assets\filetree\jqueryFileTree.jsp" />
+    <Content Include="BugTemp\assets\filetree\jqueryFileTree.php" />
+    <Content Include="BugTemp\assets\filetree\jqueryFileTree.pl" />
+    <Content Include="BugTemp\assets\filetree\jqueryFileTree.py" />
+    <Content Include="BugTemp\assets\filetree\jqueryFileTree.rb" />
+    <Content Include="BugTemp\assets\filetree\jqueryFileTree_huck.lasso" />
+    <Content Include="BugTemp\assets\filetree\jqueryFileTree_sabourdin.lasso" />
+    <Content Include="BugTemp\assets\pluploader\plupload.php" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\archive.rar" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\archive.tar.gz" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\archive.zip" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\elFinder.class.php" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\elFinder.py" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\milter-greylist.c" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\munin_httptime.sh" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\Payment Icons.zip" />
+    <Content Include="BugTemp\assets\uploads\MIME-Types\Supervisor.doc" />
+    <Content Include="BugTemp\css\bootstrap\bootstrap.css.map" />
+    <Content Include="BugTemp\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="BugTemp\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="BugTemp\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="BugTemp\css\fonts\FontAwesome.otf" />
+    <Content Include="BugTemp\js\plugins\codemirror\mode\livescript\livescript.ls" />
+    <Content Include="BugTemp\js\plugins\jquery\jquery-2.0.3.min.map" />
+    <Content Include="BugTemp\js\plugins\tinymce\langs\readme.md" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\fonts\readme.md" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="BugTemp\js\plugins\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.1.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.1.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="sticky-note.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\NoAccess.cshtml" />
+    <Content Include="Views\Manage\ChangeName.cshtml" />
+    <Content Include="Views\Shared\_Spicy.cshtml" />
+    <Content Include="Views\Admin\ChangeRole.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Tickets\AssignTicket.cshtml" />
+    <Content Include="Views\Tickets\Create.cshtml" />
+    <Content Include="Views\Tickets\Delete.cshtml" />
+    <Content Include="Views\Tickets\Details.cshtml" />
+    <Content Include="Views\Tickets\DevProjects.cshtml" />
+    <Content Include="Views\Tickets\Edit.cshtml" />
+    <Content Include="Views\Tickets\Index.cshtml" />
+    <Content Include="Views\Tickets\myIndex.cshtml" />
+    <Content Include="Views\Tickets\myUnassignedT.cshtml" />
+    <Content Include="Views\TicketNotifications\Create.cshtml" />
+    <Content Include="Views\TicketNotifications\Delete.cshtml" />
+    <Content Include="Views\TicketNotifications\Details.cshtml" />
+    <Content Include="Views\TicketNotifications\Edit.cshtml" />
+    <Content Include="Views\TicketNotifications\Index.cshtml" />
+    <Content Include="Views\TicketHistories\Create.cshtml" />
+    <Content Include="Views\TicketHistories\Delete.cshtml" />
+    <Content Include="Views\TicketHistories\Details.cshtml" />
+    <Content Include="Views\TicketHistories\Edit.cshtml" />
+    <Content Include="Views\TicketHistories\Index.cshtml" />
+    <Content Include="Views\TicketComments\Create.cshtml" />
+    <Content Include="Views\TicketComments\Delete.cshtml" />
+    <Content Include="Views\TicketComments\Details.cshtml" />
+    <Content Include="Views\TicketComments\Edit.cshtml" />
+    <Content Include="Views\TicketComments\Index.cshtml" />
+    <Content Include="Views\TicketAttachments\Create.cshtml" />
+    <Content Include="Views\TicketAttachments\Delete.cshtml" />
+    <Content Include="Views\TicketAttachments\Details.cshtml" />
+    <Content Include="Views\TicketAttachments\Edit.cshtml" />
+    <Content Include="Views\TicketAttachments\Index.cshtml" />
+    <Content Include="Views\Projects\AssignProject.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\Delete.cshtml" />
+    <Content Include="Views\Projects\Details.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Projects\myProjects.cshtml" />
+    <Content Include="Views\Projects\UnassignProject.cshtml" />
+    <Content Include="Views\ProjectManager\Index.cshtml" />
+    <Content Include="Views\Account\SubLogin.cshtml" />
+    <Content Include="Views\Home\Notification.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="BugTemptrash\assets\pluploads\" />
+    <Folder Include="BugTemptrash\assets\uploads\.quarantine\" />
+    <Folder Include="BugTemptrash\assets\uploads\Welcome\folder 1\" />
+    <Folder Include="BugTemptrash\assets\uploads\Welcome\folder 2\folder 1\" />
+    <Folder Include="BugTemptrash\assets\uploads\Welcome\folder 2\folder 2\" />
+    <Folder Include="BugTemptrash\assets\uploads\Welcome\folder 2\folder 3\" />
+    <Folder Include="BugTemptrash\assets\uploads\Welcome\folder 2\folder 4\" />
+    <Folder Include="BugTemptrash\assets\uploads\Welcome\folder 2\folder 5\" />
+    <Folder Include="BugTemptrash\assets\uploads\Welcome\folder 3\" />
+    <Folder Include="BugTemptrash\assets\uploads\Welcome\folder 4\" />
+    <Folder Include="BugTemptrash\assets\uploads\Welcome\folder 5\" />
+    <Folder Include="BugTemp\assets\pluploads\" />
+    <Folder Include="BugTemp\assets\uploads\.quarantine\" />
+    <Folder Include="BugTemp\assets\uploads\Welcome\folder 1\" />
+    <Folder Include="BugTemp\assets\uploads\Welcome\folder 2\folder 1\" />
+    <Folder Include="BugTemp\assets\uploads\Welcome\folder 2\folder 2\" />
+    <Folder Include="BugTemp\assets\uploads\Welcome\folder 2\folder 3\" />
+    <Folder Include="BugTemp\assets\uploads\Welcome\folder 2\folder 4\" />
+    <Folder Include="BugTemp\assets\uploads\Welcome\folder 2\folder 5\" />
+    <Folder Include="BugTemp\assets\uploads\Welcome\folder 3\" />
+    <Folder Include="BugTemp\assets\uploads\Welcome\folder 4\" />
+    <Folder Include="BugTemp\assets\uploads\Welcome\folder 5\" />
+    <Folder Include="Uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608272107427_Initial.resx">
+      <DependentUpon>201608272107427_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608272115245_InitialMigrations.resx">
+      <DependentUpon>201608272115245_InitialMigrations.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51097</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51097/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
