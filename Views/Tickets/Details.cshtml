@@ -29,6 +29,11 @@ h3 {
    left: 0; 
    width: 100%; 
 }
+
+    hr {
+        width:6em;
+        outline-color:darkorange;
+    }
 </style>
 
 <div class="block">
@@ -37,8 +42,17 @@ h3 {
     </div>
     <div class="content">
         @*<div class="row">*@
-            <div class="col-md-6" style="height:30em; background:rgba(0, 0, 0, 0.50)">
+            @*<div class="col-md-6" style="height:30em; background:rgba(0, 0, 0, 0.50)">
    
+                
+                
+                
+                
+                
+                
+                
+                
+                
                  
                 <dl class="dl-horizontal" style="width:100%; position:absolute; z-index:1; margin-left:62%; margin-top:10%;">
                     <dt class="we-create animated fadeInRightBig delay-0.5s">
@@ -121,30 +135,92 @@ h3 {
                         @Html.DisplayFor(model => model.Updated)
                     </dd>
                 </dl>
-            </div>
-        @*<div class="bs-example" style="position:absolute; z-index:1;">
-                        <div class="image">
-                            <img style="height:15em;width:15em;" src="~/plain-blue.jpg" />
-                            <h3>Title|  &#160;@Html.DisplayFor(model => model.Title)
-                                &#160;
-                            Description|  &#160;@Html.DisplayFor(model => model.Description)
-                                &#160;
-                            Created|  &#160;@Html.DisplayFor(model => model.Created) 
-                            Developer|  &#160; @Html.DisplayFor(model => model.AssignedTo.FirstName)
-                            &#160;
-                            Submitter|  &#160;@Html.DisplayFor(model => model.OwnerUser.FirstName)
-                            Project|  &#160;@Html.DisplayFor(model => model.Project.Name)
-                            Ticket Priority|  &#160;@Html.DisplayFor(model => model.TicketPriority.Name)
-                            &#160;
-                            Ticket Status|  &#160;@Html.DisplayFor(model => model.TicketStatus.Name)
-                            &#160;
-                            Ticket Type|  &#160;@Html.DisplayFor(model => model.TicketType.Name)</h3>
-                        </div>              
-        </div>*@
+            </div>*@
 
-            <div class="col-md-6" style="height:30em; background:rgba(128, 128, 128, 0.60);">
-                
+
+
+        <div class="block">
+
+            <div class="content">
+
+                <div  style="text-align:center" id="carousel-example-generic" class="carousel" data-ride="false">
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                            <div class="carousel-content">
+                                <p style="font-size:large">Title:</p>
+                                 <p>@Html.DisplayFor(model => model.Title)</p>
+                                <hr />
+                                <p style="font-size:large">Description:</p>
+                                <p>@Html.DisplayFor(model => model.Description)</p>
+                                <hr />
+                                <p style="font-size:large">Created:</p>
+                                <p>@Html.DisplayFor(model => model.Created)</p>                              
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-content">
+                                
+                                    @if (Model.AssignedToId == ViewBag.userid)
+                                    {
+                                        <p style="font-size:large">Developer:</p>
+                                         <p>Me</p>
+                                    }
+                                    else
+                                    {
+                                    <p style="font-size:large">Developer:</p> 
+                                    <p>@Html.DisplayFor(model => model.AssignedTo.FirstName)</p>
+                                    } 
+                                <hr />                
+                                    @if (Model.OwnerUserId == ViewBag.userid)
+                                    {
+                                        <p style="font-size:large">Submitter</p>
+                                         <p>Me</p>
+                                    }
+                                    else
+                                    {
+                                        <p style="font-size:large">Submitter</p>
+                                        <p>@Html.DisplayFor(model => model.OwnerUser.FirstName)</p>
+                                    }
+                                <hr />
+                                <p style="font-size:large">Project</p>
+                                <p>@Html.DisplayFor(model => model.Project.Name)</p>
+                                    
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="item">
+
+                                <div class="carousel-content">
+                                        @if (!User.IsInRole("Submitter"))
+                                        {
+                                            <p style="font-size:large">Ticket Priority</p> 
+                                            <p>@Html.DisplayFor(model => model.TicketPriority.Name)</p>
+                                        }
+                                        <hr />
+                                        <p style="font-size:large">Ticket Status</p>
+                                        <p>@Html.DisplayFor(model => model.TicketStatus.Name)</p>
+                                        <hr />
+                                        <p style="font-size:large">Ticket Type</p> 
+                                        <p>@Html.DisplayFor(model => model.TicketType.Name)<p>
+                                </div>
+                            </div>                    
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="icon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="icon-chevron-right"></span>
+                    </a>
+
+                </div>
+
             </div>
+
+        </div>
     @*</div>*@
     </div>
     
@@ -206,6 +282,13 @@ h3 {
                                 <span class="icon-th-list"></span>
                                     &#160;
                                 Attachments
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "TicketHistories")" data-toggle="modal">
+                                    <span class="icon-th-list"></span>
+                                    &#160;
+                                    History
                                 </a>
                             </li>
                                

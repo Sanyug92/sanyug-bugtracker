@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using sanyug_bugtracker.Models;
 using Microsoft.AspNet.Identity;
+using System.Threading.Tasks;
 
 namespace sanyug_bugtracker.Controllers
 {
@@ -92,7 +93,7 @@ namespace sanyug_bugtracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Comment,Created,TicketId,UserId")] TicketComments ticketComments /*int id*/)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Comment,Created,TicketId,UserId")] TicketComments ticketComments /*int id*/)
         {
             if (ModelState.IsValid)
             {
@@ -128,8 +129,18 @@ namespace sanyug_bugtracker.Controllers
                 }
                 db.TicketComments.Add(ticketComments);              
                 db.SaveChanges();
-                
-                
+
+
+                var svc = new EmailService();
+                var msg = new IdentityMessage();
+                msg.Subject = "New Comment";
+                msg.Body = "\r\n You have a new Attachment on the ticket titled," + ticketComments.Ticket.Title + "with the following description:" + ticketComments.Ticket.Description + "\r\n";
+
+
+                msg.Destination = ticketComments.Ticket.AssignedToId;
+
+                await svc.SendAsync(msg);
+
                 return RedirectToAction("Details", "Tickets", new { Id = T.Id });
                 //ticketComments.TicketId = id;
 
@@ -168,7 +179,7 @@ namespace sanyug_bugtracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Comment,Created,TicketId,UserId")] TicketComments ticketComments)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Comment,Created,TicketId,UserId")] TicketComments ticketComments)
         {
             if (ModelState.IsValid)
             {
@@ -177,6 +188,17 @@ namespace sanyug_bugtracker.Controllers
                 db.SaveChanges();
                 return RedirectToAction("details", "Tickets", new {id = ticketComments.TicketId });
             }
+
+            var svc = new EmailService();
+            var msg = new IdentityMessage();
+            msg.Subject = "Comment Edited";
+            msg.Body = "\r\n You have a new edit on the ticket titled," + ticketComments.Ticket.Title + "with the following description:" + ticketComments.Ticket.Description + "\r\n";
+
+            
+            msg.Destination = ticketComments.Ticket.AssignedToId;
+
+            await svc.SendAsync(msg);
+
             ViewBag.TicketId = new SelectList(db.Tickets, "Id", "Title", ticketComments.TicketId);
             ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", ticketComments.UserId);
             return View(ticketComments);

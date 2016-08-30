@@ -106,10 +106,13 @@
                                     <li><a href="@Url.Action("myIndex","Tickets")">My Tickets</a></li>
                                     <li><a href="@Url.Action("DevProjects","Tickets")">Tickets of My Projects</a></li>
                                 </ul>
-                            </li>                           
+                            </li>  
+                            @if (User.IsInRole("Admin") || User.IsInRole("ProjectManager") || User.IsInRole("DemoProjectManager") || User.IsInRole("DemoAdmin"))
+                            {
                             <li>
-                                <a href="@Url.Action("myProjects","Projects")" @*class="dropdown-toggle" data-toggle="dropdown"*@><span class="icon-cogs"></span>My Projects</a>
+                                <a href="@Url.Action("myProjects", "Projects")" @*class="dropdown-toggle" data-toggle="dropdown"*@><span class="icon-cogs"></span>My Projects</a>
                             </li>
+                            }
                             <li>
                                
                             </li>    
@@ -124,23 +127,27 @@
                                     <li><button class="getuser" value="@Roles.AddUsersToRole(ViewBag.userid, ViewBag.rolePMid)" id="PM">Project Manager</button></li> 
                                     <li><button class="getuser" value="@Roles.AddUsersToRole(ViewBag.userid, ViewBag.roleid)" id="Deverloperx">Developer</button></li> 
                                     <li><button class="getuser" value="@Roles.AddUsersToRole(ViewBag.userid, ViewBag.roleSid)" id="Sub">Submitter</button></li>*@ 
-                                    @*<li>                                  
-                                       @if (Request.IsAuthenticated)
-                                        {
-                                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-left" }))
-                                            {
-                                                @Html.AntiForgeryToken()
+                                    <li>                                  
+                                      @*@if (Request.IsAuthenticated)
+                                      {
+                                          using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                          {
+                                            @Html.AntiForgeryToken()
+                                                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                                
                                                 <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-                                            }
-                                        }
-                                    </li>*@
+                                            
+                                          }
+                                      }*@
+
+                                    </li>
                                     <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
                                     <li><a href="~/BugTemp/sample_profile.html">User profile</a></li>                      
                                     <li><a href="~/BugTemp/sample_edit_profile.html">Edit profile</a></li>                                 
                                     <li><a href="~/BugTemp/sample_timeline.html">Timeline</a></li>                                 
                                 </ul>
                             </li>
-                            <li><div class="icon-bell-alt" id="alert-placeholder" style="padding: 5px;"></div></li>
+                            @*<li><div class="icon-bell-alt" id="alert-placeholder" style="padding: 5px;"></div></li>*@
                             
                         </ul>
                        
@@ -153,14 +160,14 @@
                 </nav>
                 }
 
-                @if (!User.Identity.IsAuthenticated)
+                @*@if (!User.Identity.IsAuthenticated)
                 {
 
                     <nav class="navbar brb" role="navigation">
-                        <button><a href="@Url.Action("Login","Account")">Login</a></button>
+                        <button><a href="@Url.Action("Login","Account") class="btn" ">Login</a></button>
                         <button><a href="@Url.Action("Register", "Account")">Registration</a></button>
                     </nav>
-                }
+                }*@
                
 </div>
         </div>
@@ -181,10 +188,28 @@
                     </div>
                 </div>
 
-      
+
+    @Scripts.Render("~/BugTemp/js/plugins/jquery/jquery.min.js")
+    @Scripts.Render("~/BugTemp/js/plugins/bootstrap/bootstrap.min.js")
+    @Scripts.Render("~/BugTemp/js/plugins/datatables/jquery.dataTables.min.js")
+    @*@Scripts.Render("~/Scripts/jquery.signalR-2.2.1.min.js")
+      @Scripts.Render("~/SignalR/Hubs.js")*@
+    @*@Scripts.Render("~/~/BugTemp/js/actions.js")*@
 
 
-    @section scripts {
+    @*@Scripts.Render("~/BugTemp/js/plugins/bootstrap/bootstrap-file-input.js")*@
+    @Scripts.Render("~/BugTemp/js/actions.js")
+    @Scripts.Render("~/BugTemp/js/plugins/tinymce/tinymce.min.js")
+    <script>tinymce.init({ selector:'textarea'});</script>
+    @RenderSection("scripts", required: false)
+
+    @*<script type='text/javascript' src='~/BugTemp/js/plugins.js'></script>
+        <script type='text/javascript' src='~/BugTemp/js/actions.js'></script>
+        <script type='text/javascript' src='~/BugTemp/js/charts.js'></script>
+        <script type='text/javascript' src='~/BugTemp/js/settings.js'></script>*@
+
+
+    @*@section scripts {
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -201,7 +226,7 @@
                 //      },
                 //error: function (xhr, ajaxOptions, thrownError) {
                 //    alert(xhr.responseText);
-            });*@
+            });
 
             //a helper function to encode HTML values.
             function htmlEncode(value) {
@@ -232,25 +257,11 @@
             });
 
     </script>
-    }
+    }*@
 
-    @Scripts.Render("~/~/BugTemp/js/actions.js")
-    @Scripts.Render("~/BugTemp/js/plugins/jquery/jquery.min.js")
-    @Scripts.Render("~/BugTemp/js/plugins/bootstrap/bootstrap.min.js")   
-    @Scripts.Render("~/Scripts/jquery.signalR-2.2.1.min.js")
-    @Scripts.Render("~/SignalR/Hubs")
-    @Scripts.Render("~/BugTemp/js/plugins/datatables/jquery.dataTables.min.js")
+  
 
-    @*@Scripts.Render("~/BugTemp/js/plugins/bootstrap/bootstrap-file-input.js")*@
-    @Scripts.Render("~/BugTemp/js/actions.js")
-    @Scripts.Render("~/BugTemp/js/plugins/tinymce/tinymce.min.js")
-    <script>tinymce.init({ selector:'textarea'});</script>
-    @RenderSection("scripts", required: false)
-
-    @*<script type='text/javascript' src='~/BugTemp/js/plugins.js'></script>
-    <script type='text/javascript' src='~/BugTemp/js/actions.js'></script>
-    <script type='text/javascript' src='~/BugTemp/js/charts.js'></script>
-    <script type='text/javascript' src='~/BugTemp/js/settings.js'></script>*@
+  
 
     
 </body>

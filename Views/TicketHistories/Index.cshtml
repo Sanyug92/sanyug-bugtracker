@@ -1,15 +1,80 @@
 ﻿@model IEnumerable<sanyug_bugtracker.Models.TicketHistories>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "History";
 }
 
-<h2>Index</h2>
+@*<h2>Index</h2>*@
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+
+</p>*@
+
+
+
+
+
+<div class="col-md-5">
+
+    <div class="block">
+        <div class="head bg-dot20">
+            <h2>History</h2>
+            <div class="pull-right">
+                @*<ul class="buttons">
+                    <li><a href="#"><span class="icon-play"></span></a></li>
+                    <li><a href="#"><span class="icon-pause"></span></a></li>
+                    <li><a href="#"><span class="icon-cogs"></span></a></li>
+                </ul>*@
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <span class="icon-ok"></span>
+                </div>
+                <div class="timeline-info">
+                    <div class="timeline-info-content">
+@foreach (var item in Model)
+{
+                        <ul>
+                            <li>
+
+                                Title &#160; | &#160; @Html.DisplayFor(modelItem => item.Ticket.Title)
+                            </li>
+                            <li>
+                               Submitter &#160; | &#160; @Html.DisplayFor(modelItem => item.User.FirstName)
+                            </li>
+                            <li>
+                                Property &#160; | &#160; @Html.DisplayFor(modelItem => item.Property)
+                            </li>
+                            <li>
+                               Old Value &#160;|  &#160; @Html.DisplayFor(modelItem => item.OldValue)
+                            </li>
+                            <li>
+                              New Value &#160; | &#160; @Html.DisplayFor(modelItem => item.NewValue)
+                            </li>                          
+                            <li>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            </li>
+                        </ul>
+}
+                    </div>
+                    @*<div class="timeline-info-date">Oct 13, 2013 21:25</div>*@
+                </div>
+            </div>
+        </div>
+        @*<div class="footer bg-dot20 tac">
+            <a href="#">Load more...</a>
+        </div*@>
+    </div>
+
+</div>
+
+.....................................................................................................
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Ticket.Title)
@@ -60,4 +125,4 @@
     </tr>
 }
 
-</table>
+</table>*@

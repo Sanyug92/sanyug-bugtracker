@@ -10,6 +10,7 @@ using sanyug_bugtracker.Models;
 using Microsoft.AspNet.Identity;
 //using sanyug_Bugtracker;
 using System.Web.Security;
+using System.Threading.Tasks;
 
 namespace sanyug_bugtracker.Controllers
 {
@@ -52,10 +53,13 @@ namespace sanyug_bugtracker.Controllers
                 parentM.tickets = myTicForPM;
                 return View(parentM);
             }
-           
+
             //ViewData["Developer"] = new SelectList(uList, "Id", "Name");
+            ParentModel pmodel = new ParentModel();
+
             var tickets = db.Tickets.Include(t => t.AssignedTo).Include(t => t.OwnerUser).Include(t => t.Project).Include(t => t.TicketPriority).Include(t => t.TicketStatus).Include(t => t.TicketType);
-            return View(tickets.ToList());
+            pmodel.tickets = tickets;
+            return View(pmodel);
 
         }
 
@@ -124,13 +128,14 @@ namespace sanyug_bugtracker.Controllers
 
         [HttpPost]
         [Authorize(Roles = "ProjectManager, Admin")]
-        public ActionResult AssignTicket(ProjectManagerViewModel model, int tId, int pId)
+        public async Task<ActionResult> AssignTicket(ProjectManagerViewModel model, int tId, int pId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var PModel = new ProjectManagerViewModel();
             ProjectHelper projectHelp = new ProjectHelper(db);
             model.Pid = pId;
             var currDev = db.Users.Find(model.Id);
+            var T = db.Tickets.Find(tId);
 
             if (ModelState.IsValid)
             {
@@ -139,10 +144,20 @@ namespace sanyug_bugtracker.Controllers
                 {
                     projectHelp.AddDevToTicket(DevId, tId);
 
-                    projectHelp.RemoveT(tId, DevId);
 
                 }
             }
+
+
+            var svc = new EmailService();
+            var msg = new IdentityMessage();
+            msg.Subject = "New Ticket Assignment";
+            msg.Body = "\r\n You have recieved a new ticket assign titled," + T.Title + "with the following description:" + T.Description + "\r\n";
+
+            msg.Destination = T.AssignedTo.Email;
+
+            await svc.SendAsync(msg);
+
             var Devs = db.Roles.FirstOrDefault(r => r.Name == "Developer");
             ViewBag.Developer = new SelectList(Devs.Id, "Id", "Name");
             //ViewBag.AssignedToId = new SelectList(db.Users, "Id", "FirstName", tickets.AssignedToId);
@@ -214,7 +229,7 @@ namespace sanyug_bugtracker.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Submitter, Admin, ProjectManager, Developer")]
-        public ActionResult Create([Bind(Include = "Id,Title,Description,Created,Updated,ProjectId,TicketTypeId,TicketPriorityId,TicketStatusId,OwnerUserId,AssignedToId")] Tickets tickets, UserViewModel model)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Title,Description,Created,Updated,ProjectId,TicketTypeId,TicketPriorityId,TicketStatusId,OwnerUserId,AssignedToId")] Tickets tickets, UserViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -224,7 +239,16 @@ namespace sanyug_bugtracker.Controllers
                 tickets.Created = DateTime.Now;
                 db.Tickets.Add(tickets);
                 db.SaveChanges();
+
+                var svc = new EmailService();
+                var msg = new IdentityMessage();
+                msg.Subject = "New Ticket";
+                msg.Body = "\r\n You have a new ticket titled," + tickets.Title + "with the following description:" + tickets.Description + "\r\n";
+
+
                 var bp = db.Projects.Find(tickets.ProjectId);
+                msg.Destination = bp.PManager.Email;
+                await svc.SendAsync(msg);
                 return RedirectToAction("myIndex", "Tickets");
             }
 
@@ -299,7 +323,7 @@ namespace sanyug_bugtracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Description,Created,Updated,ProjectId,TicketTypeId,TicketPriorityId,TicketStatusId,OwnerUserId,AssignedToId")] Tickets model)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Title,Description,Created,Updated,ProjectId,TicketTypeId,TicketPriorityId,TicketStatusId,OwnerUserId,AssignedToId")] Tickets model)
         {
             var user = db.Users.Find(User.Identity.GetUserId());
             ProjectHelper HistoryHelp = new ProjectHelper(db);
@@ -327,13 +351,25 @@ namespace sanyug_bugtracker.Controllers
             tickets.TicketStatusId = model.TicketStatusId;
             tickets.OwnerUserId = user.Id;
             tickets.Created = tickets.Created = DateTime.Now;
+            var project = db.Projects.Find(tickets.Id);
             db.Tickets.Add(model);                    
-            //tickets.Id = model.Id;
+            
 
             if (ModelState.IsValid)
             {    
                 db.Entry(tickets).State = EntityState.Modified;
                 db.SaveChanges();
+
+                var svc = new EmailService();
+                var msg = new IdentityMessage();
+                msg.Subject = "Ticket Edited";
+                msg.Body = "\r\n You have a new edit on the ticket titled," + tickets.Title + "with the following description:" + tickets.Description + "\r\n";
+
+                //var users = db.Users.Where(p => p.Projects.Any(u => u.Id == ))
+                msg.Destination = project.Users.Select(u => u.Email).ToString();
+
+                await svc.SendAsync(msg);
+
 
                 return RedirectToAction("myIndex", "Tickets");
                

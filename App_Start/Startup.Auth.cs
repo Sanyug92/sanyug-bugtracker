@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using sanyug_bugtracker.Models;
+using Owin.Security.Providers.LinkedIn;
 
 namespace sanyug_bugtracker
 {
@@ -58,11 +59,14 @@ namespace sanyug_bugtracker
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "83982407518-lms0bp97ebtbatg420ksdfk3r5nj9td5.apps.googleusercontent.com",
+                ClientSecret = "YmDjXv6g7LdyadL6myahaawTann"
+            });
+
+            app.UseLinkedInAuthentication("75tmeofz89wk7h", "63BoZzFbbAnYMV6");
+
         }
     }
 }

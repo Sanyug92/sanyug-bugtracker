@@ -146,9 +146,7 @@ namespace sanyug_bugtracker.Controllers
             foreach (var PMid in model.SelectedProjectManager)
             {
                 projectHelp.RemoveUserFromProject(PMid, projectId);
-                project.PManagerID = PMid;
-                db.Projects.Add(project);
-                db.SaveChanges();
+               
 
 
             }

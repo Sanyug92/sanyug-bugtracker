@@ -1,0 +1,75 @@
+﻿@*@model sanyug_bugtracker.Models.TicketAttachments
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+   
+    @Html.HiddenFor(model => Model.TicketId)
+    @Html.HiddenFor(model => model.UserId)
+
+  
+        <h4>TicketAttachments</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.TicketId, "TicketId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TicketId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TicketId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="header">
+                <h2>Add Attachment</h2>
+            </div>
+            <div class="content controls">
+                <div class="form-row">
+                    <div class="col-md-3">Description:</div>
+                    <div class="col-md-9">
+                    <textarea name="Description" class="tmce"></textarea>
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*<div class="form-row">
+                    <div class="col-md-3">File:</div>
+                    <div class="col-md-9">
+                        <input name="image" type="file" class="form-control" id="fileUpload" />
+                        @Html.ValidationMessageFor(model => model.FileUrl, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FileUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input name="image" type="file" class="form-control" id="fileUpload" />
+                        @Html.EditorFor(model => model.FileUrl, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FileUrl, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@

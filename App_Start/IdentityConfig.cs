@@ -11,15 +11,44 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using sanyug_bugtracker.Models;
+using SendGrid;
+using System.Net.Mail;
+using System.Configuration;
 
 namespace sanyug_bugtracker
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        public async Task SendAsync(IdentityMessage message)
+
         {
             // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+
+            var apikey = ConfigurationManager.AppSettings["SendGridAPIkey"];
+            var from = ConfigurationManager.AppSettings["ContactEmail"];
+            SendGridMessage myMessage = new SendGridMessage();
+            myMessage.AddTo(message.Destination);
+            myMessage.From = new MailAddress(from);
+            myMessage.Subject = message.Subject;
+            myMessage.Html = message.Body;
+
+            //creating a web transport for sending email
+            var transportWeb = new Web(apikey);
+            // send the email. 
+
+            try
+            {
+                await transportWeb.DeliverAsync(myMessage);
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                await Task.FromResult(0);
+
+            }
+
+            //return Task.FromResult(0);
         }
     }
 
@@ -40,7 +69,7 @@ namespace sanyug_bugtracker
         {
         }
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
+        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
             // Configure validation logic for usernames
@@ -81,7 +110,7 @@ namespace sanyug_bugtracker
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                manager.UserTokenProvider = 
+                manager.UserTokenProvider =
                     new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<sanyug_bugtracker.Models.Projects>
+
+@{
+    ViewBag.Title = "myProjects";
+}
+
+<h2>Index</h2>
+
+<p>
+    @if (User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+
+                @if (User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Assign Project", "AssignProject", new { id = item.Id })
+
+                    @Html.ActionLink("Unassign Project", "UnassignProject", new { id = item.Id })
+                }
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section scripts {
+
+    <script>
+                $(document).ready(function () {
+                    $('.table').DataTable();
+                });
+                $(document).ready(function () {
+                    $('.dropdown-toggle').dropdown();
+                });
+    </script>
+
+
+}

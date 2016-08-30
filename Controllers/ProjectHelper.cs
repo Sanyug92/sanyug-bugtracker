@@ -34,12 +34,8 @@ namespace sanyug_bugtracker.Controllers
         {
             var getProject = db.Projects.Find(projectId);
 
-            getProject.PManagerID = userId;
-            
-
-            //if (getProject.PManagerID == null) { 
             getProject.Users.Add(db.Users.Find(userId));         
-            //}
+            
             db.SaveChanges();
         }
         public void RemoveUserFromProject(string userId, int projectId)
@@ -47,7 +43,7 @@ namespace sanyug_bugtracker.Controllers
             
             
             var getProject = db.Projects.Find(projectId);
-            getProject.PManagerID = userId;
+            //getProject.PManagerID = userId;
 
             getProject.Users.Remove(db.Users.Find(userId));
             db.SaveChanges();
@@ -69,7 +65,7 @@ namespace sanyug_bugtracker.Controllers
                 getTickets.AssignedToId = userId;
             }
             
-            db.Tickets.Add(getTickets);
+            //db.Tickets.Add(getTickets);
 
             db.SaveChanges();
         }

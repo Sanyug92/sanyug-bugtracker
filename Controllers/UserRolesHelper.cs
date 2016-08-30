@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-
+using sanyug_bugtracker;
 using sanyug_bugtracker.Models;
 using System;
 using System.Collections.Generic;

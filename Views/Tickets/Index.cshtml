@@ -1,27 +1,4 @@
 ﻿@model IEnumerable<sanyug_bugtracker.Models.Tickets>
-@*@model sanyug_bugtracker.Models.ParentModel
-
-@{
-    WebGrid gridticket = new WebGrid(Model.tickets);
-    WebGrid gridModel2 = new WebGrid(Model.ProjectManagerViewModel);
-}*@
-
-
-
-
-@*@{
-        ViewBag.Title = "Index";
-    }
-
-    <h2>Index</h2>
-
-    <p>
-        @Html.ActionLink("Create New", "Create")
-        <br />
-        @Html.ActionLink("Unassigned Tickets ","myUnassignedT","Tickets")
-        <br />
-        @Html.ActionLink("All Tickets from my Projects", "DevProjects", "Tickets")
-    </p>*@
 
 
   @*<div class="row">
@@ -33,6 +10,7 @@
                 <h2>All Tickets</h2>
             </div>
             @*<div class="content">*@
+
 @if (User.Identity.IsAuthenticated)
 {
     <a href="@Url.Action("Create", "Tickets")">
@@ -43,7 +21,8 @@
 }
                 <table class="table">
                     <thead>
-                        <tr>                           
+                        <tr> 
+                            <th>Created</th>                          
                             <th>Developer</th>
                             <th>Submitter</th>
                             <th>Project</th>
@@ -52,7 +31,6 @@
                             <th>Type</th>
                             <th>Title</th>
                             <th>Description</th> 
-                            @*<th></th>*@
                             <th></th>
                         </tr>
                     </thead>
@@ -60,7 +38,7 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-
+                                <td>@Html.DisplayFor(modelItem => item.Created)</td>
                                 <td>@Html.DisplayFor(modelItem => item.AssignedTo.FirstName)</td>
                                 <td>@Html.DisplayFor(modelItem => item.OwnerUser.FirstName)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Project.Name)</td>
@@ -69,8 +47,6 @@
                                 <td>@Html.DisplayFor(modelItem => item.TicketType.Name)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Title)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Description)</td>
-                                @*<td>
-                    </td>*@
                                 <td>
                                     @if (User.IsInRole("Admin"))
                                     {

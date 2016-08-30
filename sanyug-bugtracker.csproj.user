@@ -9,6 +9,8 @@
     <WebStackScaffolding_IsPartialViewSelected>False</WebStackScaffolding_IsPartialViewSelected>
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>False</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile />
+    <NameOfLastUsedPublishProfile>sgichie-bugtracker</NameOfLastUsedPublishProfile>
+    <IISExpressSSLPort>44320</IISExpressSSLPort>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

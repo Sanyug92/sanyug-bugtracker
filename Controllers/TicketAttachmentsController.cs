@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using sanyug_bugtracker.Models;
 using Microsoft.AspNet.Identity;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace sanyug_bugtracker.Controllers
 {
@@ -96,7 +97,7 @@ namespace sanyug_bugtracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Description,Created,TicketId,UserId,FileUrl")] TicketAttachments ticketAttachments, HttpPostedFileBase image /*int id*/)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Description,Created,TicketId,UserId,FileUrl")] TicketAttachments ticketAttachments, HttpPostedFileBase image /*int id*/)
         { 
             if (image != null && image.ContentLength > 0)
             {
@@ -155,6 +156,17 @@ namespace sanyug_bugtracker.Controllers
                 db.TicketAttachments.Add(ticketAttachments);
               
                 db.SaveChanges();
+
+                var svc = new EmailService();
+                var msg = new IdentityMessage();
+                msg.Subject = "New Attachment";
+                msg.Body = "\r\n You have a new Attachment on the ticket titled," + ticketAttachments.Ticket.Title + "with the following description:" + ticketAttachments.Ticket.Description + "\r\n";
+
+
+                msg.Destination = ticketAttachments.Ticket.AssignedToId;
+
+                await svc.SendAsync(msg);
+
                 return RedirectToAction("Details", "Tickets", new { Id = T.Id });
             }
             return View(ticketAttachments);
@@ -182,7 +194,7 @@ namespace sanyug_bugtracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,TicketId,FilePath,Description,Created,UserId,FileUrl")] TicketAttachments ticketAttachments)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,TicketId,FilePath,Description,Created,UserId,FileUrl")] TicketAttachments ticketAttachments)
         {
             if (ModelState.IsValid)
             {
@@ -190,6 +202,17 @@ namespace sanyug_bugtracker.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            var svc = new EmailService();
+            var msg = new IdentityMessage();
+            msg.Subject = "Attachment Edited";
+            msg.Body = "\r\n You have a new edit on the ticket titled," + ticketAttachments.Ticket.Title + "with the following description:" + ticketAttachments.Ticket.Description + "\r\n";
+
+            
+            msg.Destination = ticketAttachments.Ticket.AssignedToId;
+
+            await svc.SendAsync(msg);
+
             ViewBag.TicketId = new SelectList(db.Tickets, "Id", "Title", ticketAttachments.TicketId);
             ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", ticketAttachments.UserId);
             return View(ticketAttachments);

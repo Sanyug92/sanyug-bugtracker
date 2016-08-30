@@ -2,7 +2,7 @@
 @model LoginViewModel
 
 
-@*@{
+@*{
         ViewBag.Title = "Log in";
     }*@
 
@@ -23,11 +23,11 @@
             <div class="head">
                 <div class="user">
                     <div class="info user-change">
-                        <img src="~/BugTemp/img/example/user/dmitry_b.jpg" class="img-circle img-thumbnail"/>
+                        <img src="~/BugTemp/img/example/user/dmitry_b.jpg" class="img-circle img-thumbnail" />
                         <div class="user-change-button">
                             <span class="icon-off"></span>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </div>
             <div class="content controls npt">
@@ -73,31 +73,55 @@
                         <div class="checkbox">
                             @Html.CheckBoxFor(m => m.RememberMe)
                             @Html.LabelFor(m => m.RememberMe)
-                        </div>                  
+                        </div>
                     </div>
-                </div>
-            </div>
-
-
-
-            <div class="form-row">
-                <div class="col-md-12 tac"><strong>OR USE</strong></div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-12">
-                    <a href="#" class="btn btn-info btn-block"><span class="icon-facebook"></span> &nbsp; Facebook</a>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-12">
-                    <a href="#" class="btn btn-primary btn-block"><span class="icon-twitter"></span> &nbsp; Tweeter</a>
                 </div>
             </div>
         </div>
     </div>
+
 }
 
 
+<div class="login-block">
+    <div class="block block-transparent">
+        <div class="form-row">
+            <div class="col-md-12 tac"><strong>OR USE</strong></div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-12">
+                @*<a href="#" class="btn btn-info btn-block"><span class="icon-facebook"></span> &nbsp; Facebook</a>*@
+                <form method="Post" action="@Url.Action("DemoLogin","Account", new { Email = "Sub@demo.com", Password = "@33781slG@", RememberMe = false, returnUrl = "returnUrl" })">
+                    @Html.AntiForgeryToken()<input type="submit" value="Submitter" class="btn btn-info btn-block" />
+                </form>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-12">
+                @*<a href="#" class="btn btn-info btn-block"><span class="icon-facebook"></span> &nbsp; Facebook</a>*@
+                <form method="Post" action="@Url.Action("DemoLogin","Account", new { Email = "Admin@demo.com", Password = "@33781slG@", RememberMe = false, returnUrl = "returnUrl" })">
+                    @Html.AntiForgeryToken()<input type="submit" value="Admin" class="btn btn-info btn-block" />
+                </form>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-12">
+                @*<a href="#" class="btn btn-info btn-block"><span class="icon-facebook"></span> &nbsp; Facebook</a>*@
+                <form method="Post" action="@Url.Action("DemoLogin","Account", new { Email = "Dev@demo.com", Password = "@33781slG@", RememberMe = false, returnUrl = "returnUrl" })">
+                    @Html.AntiForgeryToken()<input type="submit" value="Developer" class="btn btn-info btn-block" />
+                </form>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-12">
+                <form method="Post" action="@Url.Action("DemoLogin","Account", new { Email = "PM@demo.com", Password = "@33781slG@", RememberMe = false, returnUrl = "returnUrl" })">
+                    @Html.AntiForgeryToken()<input type="submit" value="Project Manager" class="btn btn-info btn-block" />
+                </form>
+                @*<a href="#" class="btn btn-primary btn-block"><span class="icon-twitter"></span> &nbsp; Tweeter</a>*@
+            </div>
+        </div>
+        </div>
+    </div>
 
 
 
@@ -108,70 +132,75 @@
 
 
 
-@*<div class="form-group">
-                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <div class="checkbox">
-                                @Html.CheckBoxFor(m => m.RememberMe)
-                                @Html.LabelFor(m => m.RememberMe)
+
+
+
+
+
+        @*<div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Log in" class="btn btn-default" />
-                        </div>
-                    </div>
-                    <p>
-                        @Html.ActionLink("Register as a new user", "Register")
-                        <hr />
-                        @Html.ActionLink("Forgot Password?", "ForgotPassword", "Account")
-                    </p>
-                    @* Enable this once you have account confirmation enabled for password reset functionality
-                        <p>
-                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                        </p>
-                }
-            </section>
-        </div>
-        <div class="col-md-4">
-            <section id="socialLoginForm">
-                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-            </section>
-        </div>
-    </div>*@
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <div class="checkbox">
+                                        @Html.CheckBoxFor(m => m.RememberMe)
+                                        @Html.LabelFor(m => m.RememberMe)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Log in" class="btn btn-default" />
+                                </div>
+                            </div>
+                            <p>
+                                @Html.ActionLink("Register as a new user", "Register")
+                                <hr />
+                                @Html.ActionLink("Forgot Password?", "ForgotPassword", "Account")
+                            </p>
+                            @* Enable this once you have account confirmation enabled for password reset functionality
+                                <p>
+                                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                                </p>
+                        }
+                    </section>
+                </div>
+                <div class="col-md-4">
+                    <section id="socialLoginForm">
+                        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                    </section>
+                </div>
+            </div>*@
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-<script>
-   $(".user-change-button").click(function(){
-       $(this).parents(".block").find('.user-change').animate({opacity: 0},400,function(){
-           //$(this).find('img').attr('src', '~/favicon.ico');
-           $(this).animate({opacity: 1},400);
-       });
-       $(this).parents(".block").find(".user-change-row").fadeIn(800);
-       $(this).remove();
-   });
-</script>
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+            <script>
+                $(".user-change-button").click(function () {
+                    $(this).parents(".block").find('.user-change').animate({ opacity: 0 }, 400, function () {
+                        //$(this).find('img').attr('src', '~/favicon.ico');
+                        $(this).animate({ opacity: 1 }, 400);
+                    });
+                    $(this).parents(".block").find(".user-change-row").fadeIn(800);
+                    $(this).remove();
+                });
+            </script>
 
-<script>
+            <script>
 
                 $(document).ready(function () {
                     $('.dropdown-toggle').dropdown();
                 });
 
-</script>
-}
+            </script>
+        }
